@@ -7,6 +7,8 @@ const Product = ({ product }) => {
     // import styles from material ui at styles.js
     const classes = useStyles();
 
+    console.log(product,"inside Product.js")
+        return <div>test</div>
     return (
         <Card className={classes.root}>
             <CardMedia className={classes.media} image={product.image} title={product.name} />
