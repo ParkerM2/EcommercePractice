@@ -4,10 +4,10 @@ import Product from './Product/Product';
 import useStyles from './style';
 
 
-const Products = ( {products} ) => {
+const Products = ({ products }) => {
+    // pull in styling from style.js( material.io )
     const classes = useStyles();
-    console.log(products, "inside products.js")
-    
+    // setup the array of products to passed onto the product page
     return (
         <main className={classes.content}>
             <div className={classes.toolbar}/>
