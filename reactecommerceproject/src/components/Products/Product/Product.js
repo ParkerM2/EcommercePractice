@@ -3,26 +3,25 @@ import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } fro
 import { AddShoppingCart } from '@material-ui/icons';
 import useStyles from './styles';
 
-const Product = ( product ) => {
+const Product = ( {product} ) => {
     // import styles from material ui at styles.js
     const classes = useStyles();
 
-    console.log(product,"inside Product.js")
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={product.product.media.source} title={product.product.name} />
+            <CardMedia className={classes.media} image={product.media.source} title={product.name} />
             <CardContent>
                 <div className={classes.CardContent}>
                     <Typography variant="h5" gutterBottom>
-                        {product.product.seo.title}
+                        {product.seo.title}
                     </Typography>
                     <Typography variant="h5">
-                        {product.product.price.formatted_with_code}
+                        {product.price.formatted_with_code}
                     </Typography>
                 </div>
                 <Typography variant="h6" color="textSecondary">
-                        {product.product.seo.description}
+                        {product.seo.description}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>

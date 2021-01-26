@@ -5,6 +5,7 @@ import { Products, Navbar } from './components';
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({})
 
   const fetchProducts = async () => {
     // make call to the e commerce api to list our stored products, returns a promise.
@@ -16,9 +17,15 @@ const App = () => {
   useEffect(() => {
     //load our products on start, and set products.
     fetchProducts();
+    //load our cart objects
+    fetchCart();
   }, [])
 
-  
+  console.log(cart, "cart")
+
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve())
+  }
 
   return ( 
     <div>
