@@ -5,6 +5,14 @@ import FormInput from './FormInput';
 
 function AddressForm() {
     const methods = useForm();
+    // Manage state for form inputs
+    const [shippingCountries, setShippingCountries] = useState([]);
+    const [shippingCountry, setShippingCountry] = useState('');
+    const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
+    const [shippingSubdivision, setShippingSubdivision] = useState('');
+    const [shippingOptions, setShippingOptions] = useState([]);
+    const [shippingOption, setShippingOption] = useState('');
+
 
     return (
         <>
