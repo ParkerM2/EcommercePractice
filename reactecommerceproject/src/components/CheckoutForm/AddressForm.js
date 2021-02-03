@@ -19,6 +19,8 @@ function AddressForm({checkoutToken, cart}) {
     const countries = Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name }));
     const subdivisions = Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name }));
     const sOptions = shippingOptions.map((sOption) => ({ id: sOption.id, label: `${sOption.description} - (${sOption.price.formatted_with_symbol})` }));
+
+
     const fetchShippingCountries = async (checkoutTokenId) => {
         const { countries } = await commerce.services.localeListCountries(checkoutTokenId)
         setShippingCountries(countries)
@@ -63,7 +65,7 @@ function AddressForm({checkoutToken, cart}) {
         <>
             <Typography variant="h6" gutterBottom>Shipping Address</Typography>
             <FormProvider {...methods}>
-                <form onSubmit={""}>
+                <form onSubmit={methods.handleSubmit((data) => test({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
                     <Grid container spacing={3}>
                         <FormInput required name="firstName" label="First Name" />
                         <FormInput required name="lastName" label="Last Name" />
@@ -74,7 +76,7 @@ function AddressForm({checkoutToken, cart}) {
                         <Grid item xs={12} sm={6}>
                             <InputLabel>Shipping Country</InputLabel>
                             <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
-                                {countries.map((country) => ( 
+                                {countries.map((country) => (
                                     <MenuItem key={country.id} value={country.id}>{country.label}</MenuItem>))}
                             </Select>
                         </Grid>
@@ -82,21 +84,26 @@ function AddressForm({checkoutToken, cart}) {
                             <InputLabel>Shipping Subdivision</InputLabel>
                             <Select value={shippingSubdivision} fullWidth onChange={(e) => setShippingSubdivision(e.target.value)}>
                                 {subdivisions.map((subdivision) => (
-                                <MenuItem key={subdivision.id} value={subdivision.id}>{subdivision.label}</MenuItem>))}
+                                    <MenuItem key={subdivision.id} value={subdivision.id}>{subdivision.label}</MenuItem>))}
                             </Select>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <InputLabel>Shipping Options</InputLabel>
                             <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.target.value)}>
                                 {sOptions.map((option) => (
-                                <MenuItem key={option.id} value={option.id}>{option.label}label</MenuItem>))}
+                                    <MenuItem key={option.id} value={option.id}>{option.label}label</MenuItem>))}
                             </Select>
                         </Grid>
                     </Grid>
+                    <br />
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Button component={Link} variant="outlined" to="/cart">Back To Cart</Button>
+                        <Button type="submit" variant="contained" color="primary">Next</Button>
+                    </div>
                 </form>
             </FormProvider>
         </>
-    )
-}
+    );
+};
 
-export default AddressForm
+export default AddressForm;
