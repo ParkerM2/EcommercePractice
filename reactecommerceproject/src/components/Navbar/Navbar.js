@@ -4,17 +4,29 @@ import { Shop, ShoppingCart } from '@material-ui/icons';
 import shopImg from '../../assets/PinClipart.com_ramp-clipart_3220521.png'
 import useStyles from './styles'; 
 import { Link, useLocation } from 'react-router-dom';
-
+import MenuIcon from '@material-ui/icons/Menu';
+import Fade from '@material-ui/core/Fade';
 
 const Navbar = ({totalItems}) => {
     const classes = useStyles();
     // will show path name
     const location = useLocation();
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     
         
     return (
         <>
-            <AppBar position="fixed" className={classes.appbar} color="inherit">
+            <AppBar position="sticky" className={classes.appbar} color="inherit">
                 <Toolbar>
                     <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
                         <img src={shopImg} alt="commerce site" height="25px" className={classes.image} />
@@ -24,14 +36,31 @@ const Navbar = ({totalItems}) => {
 
                     {location.pathname === '/' && (
                         <div className={classes.button}>
-                            <Link to="/cart">Go to Cart</Link>
-                            <IconButton component={Link} aria-label="Show Cart" color="inherit">
+                            <IconButton className={classes.menuButton} component={Link} to="/cart" aria-label="Show Cart" color="inherit">
                                 <Badge badgeContent={totalItems} color="secondary">
                                     <ShoppingCart />
                                 </Badge>
-                            </IconButton>
+                                </IconButton>
                         </div>
                     )}
+                    <IconButton edge="start" className={classes.menuButton}  onClick={handleClick} color="inherit" aria-label="menu">
+                        <Badge color="secondary">
+                            <MenuIcon />
+                        </Badge>
+                    </IconButton>
+                    <Menu
+                        id="fade-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={open}
+                        onClose={handleClose}
+                        TransitionComponent={Fade}
+                        >
+                        <MenuItem component={Link} to="/" onClick={handleClose}>Home</MenuItem>
+                        <MenuItem component={Link} to="/shop" onClick={handleClose}>Shop</MenuItem>
+                        <MenuItem component={Link} to="/contact" onClick={handleClose}>Contact</MenuItem>
+                        <MenuItem component={Link} to="/about" onClick={handleClose}>About Us</MenuItem>
+                        </Menu>
                 </Toolbar>
             </AppBar>
         </>

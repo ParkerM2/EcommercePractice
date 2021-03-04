@@ -1,16 +1,18 @@
 import React from 'react';
 import { Typography, Button, Divider } from '@material-ui/core';
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/react-stripe-js';
-import { Review } from './Review';
+import { loadStripe } from '@stripe/stripe-js';
+import  Review  from './Review';
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe("pk_test_51HaMKVENstRM4Y0Cfwe8d1XLKoCBaq8m0ubs5AgLp2HBJYDieUcdDXDQMJj8W2LbNuRWykxBWJ31oj5yyOzoyq2O00pZcxMA84");
 
 const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptureCheckout }) => {
     const handleSubmit = async (event, elements, stripe) => {
         event.preventDefault();
 
         if (!stripe || !elements) return;
+
+        const cardElement = elements.getElement(CardElement);
 
         const { error, paymentMethod } = await stripe.createPaymentMethod({ type: 'card', card: cardElement });
 
