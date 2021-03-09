@@ -60,6 +60,7 @@ const Navbar = ({totalItems}) => {
                         <MenuItem component={Link} to="/shop" onClick={handleClose}>Shop</MenuItem>
                         <MenuItem component={Link} to="/contact" onClick={handleClose}>Contact</MenuItem>
                         <MenuItem component={Link} to="/about" onClick={handleClose}>About Us</MenuItem>
+                        <MenuItem component={Link} to="/quote" onClick={handleClose}>Quote</MenuItem>
                         </Menu>
                 </Toolbar>
             </AppBar>

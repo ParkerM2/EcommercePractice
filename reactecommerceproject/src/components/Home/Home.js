@@ -17,6 +17,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import vehicleWrap from './../../assets/vehiclewrap.jpg';
 import tShirt from './../../assets/tShirt.png';
 import outdoorSign from './../../assets/outdoorSign.jpg';
+import Footer from './../Footer/Footer';
 
 function Copyright() {
     return (
@@ -121,32 +122,8 @@ const HomePage = () => {
             </Grid>
           ))}
         </Grid>
-      </Container>
-      {/* Footer */}
-      <Container maxWidth="md" component="footer" className={classes.footer}>
-        <Grid container spacing={4} justify="space-evenly">
-          {footers.map((footer) => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="textPrimary" gutterBottom>
-                {footer.title}
-              </Typography>
-              <ul>
-                {footer.description.map((item) => (
-                  <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          ))}
-        </Grid>
-        <Box mt={5}>
-          <Copyright />
-        </Box>
-      </Container>
-      {/* End footer */}
+        </Container>
+        <Footer />
     </>
     )
 }
