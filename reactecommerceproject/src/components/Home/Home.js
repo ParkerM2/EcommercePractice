@@ -14,7 +14,9 @@ import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import CardMedia from '@material-ui/core/CardMedia';
-import vehicleWrap from './../../assets/vehiclewrap.jpg'
+import vehicleWrap from './../../assets/vehiclewrap.jpg';
+import tShirt from './../../assets/tShirt.png';
+import outdoorSign from './../../assets/outdoorSign.jpg';
 
 function Copyright() {
     return (
@@ -33,7 +35,7 @@ const tiers = [
         description: ['Must order 24+',],
         buttonText: 'Get a Quote!',
         buttonVariant: 'contained',
-        backgroundImage: {vehicleWrap},
+        backgroundImage: tShirt,
     },
     {
         title: 'Signs',
@@ -41,14 +43,14 @@ const tiers = [
         description: ['View our Gallery for more'],
         buttonText: 'Get a Quote!',
         buttonVariant: 'contained',
-        backgroundImage: {vehicleWrap}
+        backgroundImage: outdoorSign,
     },
     {
         title: 'Vehicle Wrap',
         description: ["description"],
         buttonText: 'Get a Quote!',
         buttonVariant: 'contained',
-        backgroundImage: {vehicleWrap},
+        backgroundImage: vehicleWrap,
     },
 ];
 const footers = [
@@ -85,7 +87,6 @@ const HomePage = () => {
       <Container maxWidth="lg" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map((tier) => (
-            // Enterprise card is full width at sm breakpoint
             <Grid item key={tier.title} xs={12}  md={4}>
                 <Card className={classes.root}>
                 <CardHeader
@@ -98,7 +99,7 @@ const HomePage = () => {
                 <CardMedia 
                     component="img"
                     alt={tier.title}
-                    height="200"
+                    height="300"
                     src={tier.backgroundImage}
                     title={tier.title}
                 />

@@ -34,7 +34,7 @@ const Navbar = ({totalItems}) => {
                     </Typography>
                     <div className={classes.grow} />
 
-                    {location.pathname === '/' && (
+                   
                         <div className={classes.button}>
                             <IconButton className={classes.menuButton} component={Link} to="/cart" aria-label="Show Cart" color="inherit">
                                 <Badge badgeContent={totalItems} color="secondary">
@@ -42,7 +42,7 @@ const Navbar = ({totalItems}) => {
                                 </Badge>
                                 </IconButton>
                         </div>
-                    )}
+                    
                     <IconButton edge="start" className={classes.menuButton}  onClick={handleClick} color="inherit" aria-label="menu">
                         <Badge color="secondary">
                             <MenuIcon />
