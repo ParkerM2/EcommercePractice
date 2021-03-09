@@ -17,57 +17,37 @@ import CardMedia from '@material-ui/core/CardMedia';
 import vehicleWrap from './../../assets/vehiclewrap.jpg';
 import tShirt from './../../assets/tShirt.png';
 import outdoorSign from './../../assets/outdoorSign.jpg';
-import Footer from './../Footer/Footer';
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            Copyright © Manning Signs
-            {' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    )
-}
+
+
 
 const tiers = [
     {
         title: 'Shirts',
-        description: ['Must order 24+',],
-        buttonText: 'Get a Quote!',
+        description: ['Must order 24+',""],
+        buttonText: ['Get a Quote', 'View our gallery'],
         buttonVariant: 'contained',
         backgroundImage: tShirt,
+        url: ["/quote", "/gallery"]
     },
     {
         title: 'Signs',
-        
         description: ['View our Gallery for more'],
-        buttonText: 'Get a Quote!',
+        buttonText: ['Get a Quote', 'View our gallery'],
         buttonVariant: 'contained',
         backgroundImage: outdoorSign,
+        url: ["/quote", "/gallery"]
     },
     {
         title: 'Vehicle Wrap',
         description: ["description"],
-        buttonText: 'Get a Quote!',
+        buttonText: ['Get a Quote', 'View our gallery'],
         buttonVariant: 'contained',
         backgroundImage: vehicleWrap,
+        url: ["/quote", "/gallery"]
     },
 ];
-const footers = [
-    {
-        title: 'Company',
-        description: ['Team', 'History', 'Contact Us', 'Locations'],
-    },
-    {
-        title: 'Socials',
-        description: ['Instagram', 'Facebook',]
-    },
-    {
-        title: 'Gallery',
-        description: ['Outdoor Signs', 'Window Lettering', 'Car Decals', 'Vehicle Wraps', 'T-Shirts'],
-    },
-]
+
 
 const HomePage = () => {
     const classes = useStyles();
@@ -114,8 +94,15 @@ const HomePage = () => {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} color="primary">
-                    {tier.buttonText}
+                  
+                  <Button fullWidth  href={tier.url[0]} variant={tier.buttonVariant} color="primary">
+                    {tier.buttonText[0]}
+                    </Button>
+                  
+                </CardActions>
+                <CardActions>
+                  <Button fullWidth href={tier.url[1]} variant={tier.buttonVariant} color="primary">
+                    {tier.buttonText[1]}
                   </Button>
                 </CardActions>
               </Card>
@@ -123,7 +110,6 @@ const HomePage = () => {
           ))}
         </Grid>
         </Container>
-        <Footer />
     </>
     )
 }
