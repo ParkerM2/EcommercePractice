@@ -18,6 +18,8 @@ import {
   FormGroup,
 } from '@material-ui/core';
 import SignForm from './SignForm';
+import VehicleForm from './VehicleWrapForm';
+import ShirtForm from './ShirtForm';
 // Picker
 import DateFnsUtils from '@date-io/date-fns';
 import {
@@ -106,9 +108,11 @@ function QuoteForm() {
             case 'sign':
                 return <SignForm />
             case 'shirt':
-                return "shirt lul";
+                return <ShirtForm />
             case 'vehicle':
-                return "vehicle lul;"
+                return <VehicleForm />
+            case null:
+                return <Typography>Please Select an Option!</Typography>
         }
     }
     

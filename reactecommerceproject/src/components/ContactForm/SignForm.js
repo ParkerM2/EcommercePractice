@@ -20,39 +20,54 @@ import {
 
 const SignForm = () => {
     return (
-    
+        <>
+    <FormLabel component="legend" mt={1} mb={1} color="primary">Please answer these questions about your sign order!</FormLabel>
     <Grid container alignItems="flex-start" spacing={2}>
         <Grid item xs={6}>
             <Field
             fullWidth
             required
-            name="firstName"
+            name="height"
             component={TextField}
             type="text"
-            label="First Name"
+            label="Height"
             />
         </Grid>
     <Grid item xs={6}>
         <Field
             fullWidth
             required
-            name="lastName"
+            name="width"
             component={TextField}
             type="text"
-            label="Last Name"
+            label="Width"
         />
     </Grid>
     <Grid item xs={12}>
         <Field
-            name="email"
+            name="material"
             fullWidth
             required
             component={TextField}
-            type="email"
-            label="Email"
+            type="material"
+            label="Material"
         />
-        </Grid>
+    </Grid>                
+    <Grid item xs={12}>
+        <Field
+            name="description"
+            fullWidth            
+            multiline
+            rowsMax={6}
+            required
+            component={TextField}
+            type="description"
+            label="Description of Sign"
+        />                
     </Grid>
+                
+        </Grid>
+        </>
     )
 }
 
