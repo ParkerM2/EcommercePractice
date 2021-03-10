@@ -17,7 +17,7 @@ import Box from '@material-ui/core/Box';
             </Typography>
         )
     }
-
+    
     const footers = [
     {
         title: 'Company',
@@ -47,7 +47,7 @@ const Footer = () => {
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href={"/"}{...item} variant="subtitle1" color="textSecondary">
+                    <Link href={"/" + item} variant="subtitle1" color="textSecondary">
                       {item}
                     </Link>
                   </li>
