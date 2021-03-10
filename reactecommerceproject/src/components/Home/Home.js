@@ -19,8 +19,6 @@ import tShirt from './../../assets/tShirt.png';
 import outdoorSign from './../../assets/outdoorSign.jpg';
 
 
-
-
 const tiers = [
     {
         title: 'Shirts',
@@ -45,7 +43,7 @@ const tiers = [
         buttonVariant: 'contained',
         backgroundImage: vehicleWrap,
         url: ["/quote", "/gallery"]
-    },
+  },
 ];
 
 
@@ -56,8 +54,8 @@ const HomePage = () => {
     <>
       <CssBaseline />
       {/* Hero unit */}
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+      <Container  maxWidth="sm" component="main" className={classes.heroContent}>
+        <Typography color="primary.main" component="h1" variant="h2" align="center" gutterBottom>
           Manning Signs
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
@@ -94,11 +92,9 @@ const HomePage = () => {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  
                   <Button fullWidth  href={tier.url[0]} variant={tier.buttonVariant} color="primary">
                     {tier.buttonText[0]}
                     </Button>
-                  
                 </CardActions>
                 <CardActions>
                   <Button fullWidth href={tier.url[1]} variant={tier.buttonVariant} color="primary">

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardHeader: {
     backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
+      theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[100],
   },
   cardPricing: {
     display: 'flex',

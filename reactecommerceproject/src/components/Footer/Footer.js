@@ -6,7 +6,6 @@ import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 
-
     function Copyright() {
         return (
             <Typography variant="body2" color="textSecondary" align="center">
@@ -31,6 +30,10 @@ import Box from '@material-ui/core/Box';
         title: 'Gallery',
         description: ['Outdoor Signs', 'Window Lettering', 'Car Decals', 'Vehicle Wraps', 'T-Shirts'],
     },
+    {
+        title: 'Online Shop',
+        description: ['Shop']
+    }
     ]
 
 const Footer = () => {
@@ -47,7 +50,7 @@ const Footer = () => {
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href={"/" + item} variant="subtitle1" color="textSecondary">
+                    <Link href={"/" + item.replace(/\s+/g, '')} variant="subtitle1" color="textSecondary">
                       {item}
                     </Link>
                   </li>
