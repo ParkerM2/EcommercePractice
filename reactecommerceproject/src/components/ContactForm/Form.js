@@ -28,7 +28,7 @@ import {
   TimePicker,
   DatePicker,
 } from '@material-ui/pickers';
-import { DragHandleTwoTone } from '@material-ui/icons';
+import { DragHandleTwoTone, Label } from '@material-ui/icons';
 
 function DatePickerWrapper(props) {
   const {
@@ -76,11 +76,7 @@ function TimePickerWrapper(props) {
   );
 }
 
-const onSubmit = async values => {
-  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-  await sleep(300);
-  window.alert(JSON.stringify(values, 0, 2));
-};
+
 const validate = values => {
   const errors = {};
   if (!values.firstName) {
@@ -98,25 +94,46 @@ const validate = values => {
 
 function QuoteForm() {
     // Check to see if shirts/signs/vehicle wrap are selected to then display the corresponding form beneath.
-    const [value, setValue] = useState('null')
-    const [quoteForm, setQuoteForm] = useState()
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
-    function handleQuoteForm(value) {
-        console.log(value)
-        switch (value) {
-            case 'sign':
-                return <SignForm />
-            case 'shirt':
-                return <ShirtForm />
-            case 'vehicle':
-                return <VehicleForm />
-            case null:
-                return <Typography>Please Select an Option!</Typography>
-        }
-    }
+  const [value, setValue] = useState('null')
+  const [sending, setSending] = useState("Submit for Quote");
+ 
+  const handleChange = (event) => {
+      console.log("event.target.value, form js 105", event.target.value)
+      setValue(event.target.value);
+  };
+
+  function handleQuoteForm(value) {
+      switch (value) {
+        case 'sign':
+          return <SignForm />
+        case 'shirt':
+              return <ShirtForm />
+        case 'vehicle':
+              return <VehicleForm />
+          case null:
+              return <Typography>Please Select an Option!</Typography>
+      }
+  }
+
+  const onSubmit = async (values) => {
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+    await sleep(300);
+    window.alert(JSON.stringify(values, 0, 2,));
     
+    setSending("...Sending")
+
+    let data = {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      previousCustomer: values.previousCustomer,
+      email: values.email,
+      company: values.company,
+      height: values.height,
+      width: values.width,
+      description: values.description,
+    }
+  console.table(data)
+};
     
   return (
     <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
@@ -179,45 +196,45 @@ function QuoteForm() {
                     label="Previous Customer"
                     control={
                         <Field
-                        name="Previous Customer?"
+                        name="previousCustomer"
                         component={Checkbox}
                         type="checkbox"
                       />
                     }
                   />
                 </Grid>
-                <Grid item>
-                  <FormControl component="fieldset">
+                  <Grid item>
                     <FormLabel component="legend" color="primary">Are you looking for a Shirt, Sign, or Vehicle Wrap?</FormLabel>
-                    <RadioGroup name="form" value={value} onChange={handleChange} row>
+                    <RadioGroup name="form" value={value} onChange={handleChange}  row>
                       <FormControlLabel
                             label="Shirts"
                             name="shirts"
-                            control= {<Radio />}
+                            control={<Radio />}
                             type="Radio"
                             value="shirt"
                     />              
                       <FormControlLabel
                             label="Sign"
                             name="sign"
-                            control= {<Radio />}
+                            control={<Radio />}
                             type="Radio"
                             value="sign"
                       />
                       <FormControlLabel
                             label= "Vehicle Wrap"  
                             name= "vehicle wrap"
-                            control= {<Radio />}
+                            control={<Radio />}
                             type= "Radio"
                             value="vehicle"
                       />
-                    </RadioGroup>
-                  </FormControl>
+                  </RadioGroup>
+                  </Grid>
                 </Grid>        
-            </Grid>
             <Grid>
                 {handleQuoteForm(value)} 
             </Grid>
+            <br></br>
+              <Button variant="contained" color="primary" type="submit">{sending}</Button>
             </Paper>
           </form>
         )}
