@@ -7,6 +7,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import {
   Typography,
   Paper,
@@ -151,6 +152,16 @@ function QuoteForm() {
                     component={TextField}
                     type="text"
                     label="Last Name"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Field
+                    fullWidth
+                    required
+                    name="company"
+                    component={TextField}
+                    type="text"
+                    label="Company"
                   />
                 </Grid>
                 <Grid item xs={12}>
