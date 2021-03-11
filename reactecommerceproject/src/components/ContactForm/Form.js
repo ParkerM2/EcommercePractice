@@ -8,6 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import materials from './../../lib/materials';
 import {
   Typography,
   Paper,
@@ -105,7 +106,7 @@ function QuoteForm() {
   function handleQuoteForm(value) {
       switch (value) {
         case 'sign':
-          return <SignForm />
+          return <SignForm materials={materials} onSubmit={onSubmit} />
         case 'shirt':
               return <ShirtForm />
         case 'vehicle':
@@ -131,8 +132,11 @@ function QuoteForm() {
       height: values.height,
       width: values.width,
       description: values.description,
+      orderType: value,
+      material: values.material,
     }
-  console.table(data)
+    console.table(data)
+    
 };
     
   return (
@@ -205,7 +209,7 @@ function QuoteForm() {
                 </Grid>
                   <Grid item>
                     <FormLabel component="legend" color="primary">Are you looking for a Shirt, Sign, or Vehicle Wrap?</FormLabel>
-                    <RadioGroup name="form" value={value} onChange={handleChange}  row>
+                  <RadioGroup onChange={handleChange} name="typeOrder" row>
                       <FormControlLabel
                             label="Shirts"
                             name="shirts"
