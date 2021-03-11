@@ -20,7 +20,8 @@ import {
 
 const SignForm = () => {
     return (
-    
+        <>
+    <FormLabel component="legend" mt={1} mb={1} color="primary">Please answer these questions about your vehicle wrap!</FormLabel>
     <Grid container alignItems="flex-start" spacing={2}>
         <Grid item xs={6}>
             <Field
@@ -51,8 +52,9 @@ const SignForm = () => {
             type="email"
             label="Email"
         />
-        </Grid>
     </Grid>
+    </Grid>
+        </>
     )
 }
 
