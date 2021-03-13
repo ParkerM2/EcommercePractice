@@ -8,7 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import materials from './../../lib/materials';
+import materials from '../../lib/materials';
 import {
   Typography,
   Paper,
@@ -29,7 +29,7 @@ import {
   TimePicker,
   DatePicker,
 } from '@material-ui/pickers';
-import { DragHandleTwoTone, Label } from '@material-ui/icons';
+
 
 function DatePickerWrapper(props) {
   const {
@@ -195,20 +195,56 @@ function QuoteForm() {
                     label="Email"
                   />
                 </Grid>
+                <Grid item xs={6}>
+                  <Field
+                    name="State"
+                    fullWidth
+                    required
+                    component={TextField}
+                    type="State"
+                    label="State"
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Field
+                    name="City"
+                    fullWidth
+                    required
+                    component={TextField}
+                    type="City"
+                    label="City"
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Field
+                    name="Address"
+                    fullWidth
+                    required
+                    component={TextField}
+                    type="address"
+                    label="Address"
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Field
+                    name="zip"
+                    fullWidth
+                    required
+                    component={TextField}
+                    type="zip"
+                    label="Zip"
+                  />
+                  </Grid>
                 <Grid item xs={12}>
-                  <FormControlLabel
+                  <Field
                     label="Previous Customer"
-                    control={
-                        <Field
-                        name="previousCustomer"
-                        component={Checkbox}
-                        type="checkbox"
-                      />
-                    }
+                    name="previous customer"
+                    type="checkbox"
+                    component={Checkbox}
                   />
                 </Grid>
                   <Grid item>
-                    <FormLabel component="legend" color="primary">Are you looking for a Shirt, Sign, or Vehicle Wrap?</FormLabel>
+                    <FormLabel component="legend" color="primary">What type of <strong>Quote</strong> are you looking for?</FormLabel>
                   <RadioGroup onChange={handleChange} name="typeOrder" row>
                       <FormControlLabel
                             label="Shirts"
