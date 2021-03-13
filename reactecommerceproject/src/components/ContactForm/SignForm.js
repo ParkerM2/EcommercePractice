@@ -23,69 +23,26 @@ import {
   Menu,
 } from '@material-ui/core';
 import materials from '../../lib/materials';
+import { KeyboardReturnRounded } from '@material-ui/icons';
 
 
 
-const SignForm = () => {
-    // value of material selected in form
-    // const [material, setMaterial] = useState('')
-    // // keeps track of the material
-    // const handleMaterial = (event) => {
-    // event.preventDefault()
-    //     setMaterial(event.target.value);
-    //     console.log(material)
-    //     console.log(values)
-    // };
-    
-    // displays helper text based on material selected
-    // function handleMaterialRadioGroup(material) {
-    //      console.log(material)
-    //     switch (material) {
-    //         case 'Metal':
-    //             return "Two sheets of aluminum surrounding a PVC core"
-    //         case 'Corrugated Plastic':
-    //             return "Same material as election signs"
-    //         case 'PVC':
-    //             return "Thick PVC - used for mostly indoor wall signs"
-    //         case 'Other':
-    //             return  <Grid item xs={12}>
-    //                         <Field
-    //                         name="material"
-    //                         fullWidth
-    //                         rowsMax={6}
-    //                         multiline
-    //                         required
-    //                         select
-    //                         component={TextField}
-    //                         type="text"
-    //                         label="Material"
-    //                 >
-    //                                         {materials.map((mat) => (
-    //                     <MenuItem
-    //                         key={mat.value}
-    //                         value={mat.value}
-    //                         name={mat.label}
-    //                     >
-    //                     {mat.label}
-    //                     </MenuItem>
-    //                                         ))}
-    //                     </Field>
-    //                     </Grid> 
-    //     }
-    // }
+
+const SignForm = (values) => {
+
     
     return (
         <>
             <form>
             <Grid>
             <Grid item xs={12}>
-            <FormLabel component="legend" color="primary">Select the material you would like to use:</FormLabel>
-                <Field name="material" component="select"  >
+                        <FormLabel component="legend" color="primary">Select the material you would like to use:</FormLabel>
+            <br></br>            
+                <Field fullWidth name="material" component="select" >
                 {materials.map((mat) => (
-                    <option
+                    <option 
                         key={mat.value}
                         value={mat.value}
-                        component={TextField}
                     >
                     {mat.label}
                     </option>

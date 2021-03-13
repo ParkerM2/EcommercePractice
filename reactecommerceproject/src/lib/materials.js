@@ -11,10 +11,6 @@ const materials = [
         value: 'PVC',
         label: 'PVC'
     },
-    {
-        value: 'Other',
-        label: 'Other'
-    }
 ]
 
 export default materials;

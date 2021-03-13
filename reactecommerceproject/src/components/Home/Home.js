@@ -92,9 +92,11 @@ const HomePage = () => {
                   </ul>
                 </CardContent>
                 <CardActions>
+                  <Link to="/quote">
                   <Button fullWidth  href={tier.url[0]} variant={tier.buttonVariant} color="primary">
                     {tier.buttonText[0]}
                     </Button>
+                  </Link>
                 </CardActions>
                 <CardActions>
                   <Button fullWidth href={tier.url[1]} variant={tier.buttonVariant} color="primary">
