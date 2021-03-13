@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -92,14 +92,12 @@ const HomePage = () => {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Link to="/quote">
-                  <Button fullWidth  href={tier.url[0]} variant={tier.buttonVariant} color="primary">
+                    <Button fullWidth component={Link} to={tier.url[0]} variant={tier.buttonVariant} color="primary">
                     {tier.buttonText[0]}
                     </Button>
-                  </Link>
                 </CardActions>
                 <CardActions>
-                  <Button fullWidth href={tier.url[1]} variant={tier.buttonVariant} color="primary">
+                  <Button fullWidth component={Link} to={tier.url[1]} variant={tier.buttonVariant} color="primary">
                     {tier.buttonText[1]}
                   </Button>
                 </CardActions>
