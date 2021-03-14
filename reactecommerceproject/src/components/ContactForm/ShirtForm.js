@@ -4,6 +4,7 @@ import { Form, Field } from 'react-final-form';
 import { TextField, Checkbox, Radio } from 'final-form-material-ui';
 import {
   Typography,
+  Divider,
   Paper,
   Link,
   Grid,
@@ -22,44 +23,52 @@ const ReactSelectAdapter = ({ input, ...rest }) => (
 )
 
 
-const SignForm = () => {
+const ShirtForm = () => {
     return (
         <>
-    <FormLabel component="legend" mt={1} mb={1} color="primary">Please answer these questions about your shirt order!</FormLabel>
-    <Grid container alignItems="flex-start" spacing={2}>
-            <Grid item xs={6}>
-            <FormLabel>Quantity :</FormLabel>
+    <br></br>
+     <div style={{ margin: 'auto', maxWidth: 600 }}>
+    <CssBaseline />
+    <Grid container>
+    <FormLabel component="legend" color="primary">Please answer these questions about your shirt order!</FormLabel>
+    </Grid>
+        <Grid container spacing={3}>
+        <Grid item xs={6}>
+            <FormLabel>Quantity of Shirts:</FormLabel>
             <Field
             fullWidth
             required
-            name="Quantity"
+            name="Shirt Quantity"
             component={ReactSelectAdapter}
-            options={getNum()}>
+            options={getNum(24)}>
             </Field>
         </Grid>
-    <Grid item xs={6}>
-        <Field
+        <Grid item xs={6}>
+            <FormLabel>Quantity of Colors:</FormLabel>
+            <Field
             fullWidth
             required
-            name="lastName"
-            component={TextField}
-            type="text"
-            label="Last Name"
-        />
-    </Grid>
+            name="Color Quantity"
+            options={getNum(1)}
+            component={ReactSelectAdapter}
+            />
+        </Grid>
+    </Grid> 
     <Grid item xs={12}>
         <Field
-            name="email"
-            fullWidth
-            required
+            name="description"
+            fullWidth            
+            multiline
+            rows={10}
+            type="text"
             component={TextField}
-            type="email"
-            label="Email"
-        />
-        </Grid>
-        </Grid>
-    </>
+            label="Enter your message here:"
+        />  
+    </Grid>
+    </div>
+        </>
+    
     )
 }
 
-export default SignForm;
+export default ShirtForm;

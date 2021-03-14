@@ -108,9 +108,9 @@ function QuoteForm() {
         case 'sign':
           return <SignForm materials={materials} onSubmit={onSubmit} />
         case 'shirt':
-              return <ShirtForm />
+          return <ShirtForm onSubmit={onSubmit} />
         case 'vehicle':
-              return <VehicleForm />
+              return <VehicleForm onSubmit={onSubmit} />
           case null:
               return <Typography>Please Select an Option!</Typography>
       }
@@ -239,18 +239,18 @@ function QuoteForm() {
                   <Field
                     label="Previous Customer"
                     name="previous customer"
-                    type="checkbox"
+                    type="checkbox"                   
                     component={Checkbox}
                   />Previous Customer
                 </Grid>
                   <Grid item>
                     <FormLabel component="legend" color="primary">What type of <strong>Quote</strong> are you looking for?</FormLabel>
-                  <RadioGroup onChange={handleChange} name="typeOrder" row>
+                  <RadioGroup onChange={handleChange} color="primary" name="typeOrder" row>
                       <FormControlLabel
                             label="Shirts"
                             name="shirts"
                             control={<Radio />}
-                            type="Radio"
+                            type="Radio"                            
                             value="shirt"
                     />              
                       <FormControlLabel
@@ -258,7 +258,7 @@ function QuoteForm() {
                             name="sign"
                             control={<Radio />}
                             type="Radio"
-                            value="sign"
+                            value="sign"                            
                       />
                       <FormControlLabel
                             label= "Vehicle Wrap"  

@@ -26,13 +26,10 @@ const SignForm = (values) => {
     
     return (
         <>
-            
-          
         <FormLabel component="legend" color="primary">Select the material you would like to use:</FormLabel>
         <Grid item xs={6}>
             <Field
             fullWidth
-            required
             name="material"
             options={getMats()}
             component={ReactSelectAdapter}>
@@ -42,7 +39,6 @@ const SignForm = (values) => {
         <Grid item xs={6}>
             <Field
             fullWidth
-            required
             name="height"
             component={TextField}
             type="number"
@@ -53,7 +49,6 @@ const SignForm = (values) => {
         <Grid item xs={6}>
             <Field
             fullWidth
-            required
             name="width"
             component={TextField}
             type="number"
