@@ -241,7 +241,7 @@ function QuoteForm() {
                     name="previous customer"
                     type="checkbox"
                     component={Checkbox}
-                  />
+                  />Previous Customer
                 </Grid>
                   <Grid item>
                     <FormLabel component="legend" color="primary">What type of <strong>Quote</strong> are you looking for?</FormLabel>

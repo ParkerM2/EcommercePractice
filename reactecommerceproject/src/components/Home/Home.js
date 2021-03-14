@@ -30,7 +30,7 @@ const tiers = [
     },
     {
         title: 'Signs',
-        description: ['View our Gallery for more'],
+        description: ['We offer a large range of custom outdoor Signs and window lettering. Please visit our Gallery for examples!'],
         buttonText: ['Get a Quote', 'View our gallery'],
         buttonVariant: 'contained',
         backgroundImage: outdoorSign,
@@ -38,7 +38,7 @@ const tiers = [
     },
     {
         title: 'Vehicle Wrap',
-        description: ["description"],
+        description: ["We do full and partial vehicle wraps as well as normal vinyl lettering."],
         buttonText: ['Get a Quote', 'View our gallery'],
         buttonVariant: 'contained',
         backgroundImage: vehicleWrap,
@@ -83,7 +83,7 @@ const HomePage = () => {
                     title={tier.title}
                 />
                 <CardContent>
-                  <ul>
+                  <ul className={classes.ul}>
                     {tier.description.map((line) => (
                       <Typography component="li" variant="subtitle1" align="center" key={line}>
                         {line}

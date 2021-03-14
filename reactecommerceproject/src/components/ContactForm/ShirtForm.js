@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Select from 'react-select'
 import { Form, Field } from 'react-final-form';
-import { TextField, Checkbox, Radio, Select } from 'final-form-material-ui';
+import { TextField, Checkbox, Radio } from 'final-form-material-ui';
 import {
   Typography,
   Paper,
@@ -15,7 +16,10 @@ import {
   FormControl,
   FormControlLabel,
 } from '@material-ui/core';
-
+import getNum from '../../lib/shirtQuantity';
+const ReactSelectAdapter = ({ input, ...rest }) => (
+    <Select {...input} {...rest} searchable />
+)
 
 
 const SignForm = () => {
@@ -23,15 +27,15 @@ const SignForm = () => {
         <>
     <FormLabel component="legend" mt={1} mb={1} color="primary">Please answer these questions about your shirt order!</FormLabel>
     <Grid container alignItems="flex-start" spacing={2}>
-        <Grid item xs={6}>
+            <Grid item xs={6}>
+            <FormLabel>Quantity :</FormLabel>
             <Field
             fullWidth
             required
-            name="firstName"
-            component={TextField}
-            type="text"
-            label="First Name"
-            />
+            name="Quantity"
+            component={ReactSelectAdapter}
+            options={getNum()}>
+            </Field>
         </Grid>
     <Grid item xs={6}>
         <Field

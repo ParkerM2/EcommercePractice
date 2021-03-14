@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
       listStyle: 'none',
     },
   },
+  ul: {
+    height: "80px",
+  },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },

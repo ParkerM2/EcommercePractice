@@ -11,6 +11,15 @@ const materials = [
         value: 'PVC',
         label: 'PVC'
     },
-]
+];
 
-export default materials;
+
+function getMats() {
+    let materialArray = [];
+    for (let i = 0; i < materials.length; i++) {
+        materialArray.push(materials[i])
+    }
+    return materialArray;
+}
+
+export default getMats;

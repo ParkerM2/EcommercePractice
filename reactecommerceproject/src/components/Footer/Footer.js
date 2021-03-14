@@ -2,7 +2,7 @@ import useStyles from './styles';
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 
@@ -50,9 +50,9 @@ const Footer = () => {
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href={"/" + item.replace(/\s+/g, '')} variant="subtitle1" color="textSecondary">
+                    <Typography component={Link} to={"/" + item.replace(/\s+/g, '')} variant="subtitle1" color="textSecondary">
                       {item}
-                    </Link>
+                    </Typography>
                   </li>
                 ))}
               </ul>
