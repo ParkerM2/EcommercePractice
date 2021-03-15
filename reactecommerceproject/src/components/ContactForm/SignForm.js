@@ -1,18 +1,12 @@
-import React, { useState, Component } from 'react';
-import { Form, Field } from 'react-final-form';
+import React from 'react';
+import { Field } from 'react-final-form';
 import Select from 'react-select';
 import FormLabel from '@material-ui/core/FormLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import { TextField, Checkbox} from 'final-form-material-ui';
+import { TextField } from 'final-form-material-ui';
 import {
-  Typography,
-  Paper,
-  Link,
   Grid,
   Button,
-  CssBaseline,
-  FormGroup,
-  Menu,
 } from '@material-ui/core';
 import getMats from '../../lib/materials';
 

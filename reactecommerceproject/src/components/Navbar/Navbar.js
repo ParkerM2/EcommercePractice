@@ -1,16 +1,15 @@
 import React from 'react';
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
-import { Shop, ShoppingCart } from '@material-ui/icons';
+import { ShoppingCart } from '@material-ui/icons';
 import shopImg from '../../assets/PinClipart.com_ramp-clipart_3220521.png'
 import useStyles from './styles'; 
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import Fade from '@material-ui/core/Fade';
 
 const Navbar = ({totalItems}) => {
     const classes = useStyles();
     // will show path name
-    const location = useLocation();
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);

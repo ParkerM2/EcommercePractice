@@ -1,21 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Select from 'react-select'
-import { Form, Field } from 'react-final-form';
-import { TextField, Checkbox, Radio } from 'final-form-material-ui';
+import { Field } from 'react-final-form';
+import { TextField } from 'final-form-material-ui';
 import {
-  Typography,
-  Divider,
-  Paper,
-  Link,
   Grid,
-  Button,
   CssBaseline,
-  RadioGroup,
   FormLabel,
-  MenuItem,
-  FormGroup,
-  FormControl,
-  FormControlLabel,
 } from '@material-ui/core';
 import getNum from '../../lib/shirtQuantity';
 import moment from 'moment';

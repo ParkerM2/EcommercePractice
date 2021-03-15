@@ -5,3 +5,4 @@ export { default as Checkout } from './CheckoutForm/Checkout/Checkout';
 export { default as HomePage } from './Home/Home';
 export { default as Footer } from './Footer/Footer';
 export { default as QuoteForm } from './ContactForm/Form';
+export { default as Gallery } from './Gallery/Gallery';

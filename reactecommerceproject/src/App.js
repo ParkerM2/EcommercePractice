@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart, Checkout, HomePage, Footer, QuoteForm } from './components';
+import { Products, Navbar, Cart, Checkout, HomePage, Footer, QuoteForm, Gallery } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductParser from './lib/ProductParser';
-
+import ImageParser from './lib/ImageParser';
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [gallery, setGallery] = useState([]);
   const [cart, setCart] = useState({})
 
    // make call to commerce.js api to retrieve the items in the cart currently
@@ -17,10 +18,13 @@ const App = () => {
   const fetchProducts = async () => {
     // make call to the e commerce api to list our stored products, returns a promise.
     const { data } = await commerce.products.list();
-    // parse out data (if true send to products hook)
-    ProductParser(data);
+   
+    //Sends product array of parsed out active products
+    setProducts(ProductParser(data));
 
-    setProducts(data);
+    //Sends products to gallery if they are not active
+    setGallery(ImageParser(data));
+  
   }
 
   const handleAddToCart = async (productId, quantity) => {
@@ -85,6 +89,10 @@ const App = () => {
           {/* Quote Form Route*/}
           <Route exact path="/quote">
             <QuoteForm cart={cart}/>
+          </Route>
+          {/* Gallery route */}
+          <Route exact path="/gallery">
+            <Gallery cart={cart} images={gallery}/>
           </Route>
         </Switch>
         <Footer />
