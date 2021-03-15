@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
 import { Products, Navbar, Cart, Checkout, HomePage, Footer, QuoteForm } from './components';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ProductParser from './lib/ProductParser';
 
 
 const App = () => {
@@ -16,6 +17,8 @@ const App = () => {
   const fetchProducts = async () => {
     // make call to the e commerce api to list our stored products, returns a promise.
     const { data } = await commerce.products.list();
+    // parse out data (if true send to products hook)
+    ProductParser(data);
 
     setProducts(data);
   }
