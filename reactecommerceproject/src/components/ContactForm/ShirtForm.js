@@ -40,7 +40,7 @@ const ShirtForm = () => {
             required
             name="Shirt Quantity"
             component={ReactSelectAdapter}
-            options={getNum(24)}>
+            options={getNum(24, 1000)}>
             </Field>
         </Grid>
         <Grid item xs={6}>
@@ -49,7 +49,7 @@ const ShirtForm = () => {
             fullWidth
             required
             name="Color Quantity"
-            options={getNum(1)}
+            options={getNum(1,7)}
             component={ReactSelectAdapter}
             />
         </Grid>

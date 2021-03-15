@@ -20,7 +20,7 @@ import Box from '@material-ui/core/Box';
     const footers = [
     {
         title: 'Company',
-        description: ['Team', 'History', 'Contact Us', 'Locations'],
+        description: ['Team', 'History', 'Quote', 'Locations'],
     },
     {
         title: 'Socials',
