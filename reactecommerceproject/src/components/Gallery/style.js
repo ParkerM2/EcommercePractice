@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
@@ -10,9 +9,9 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     },
-      media: {
+  media: {
         height: 0,
-        paddingTop: '56.25%',// 16:9
+        paddingTop: '56%',// 16:9
     },
     cardActions: {
         display: 'flex',
@@ -25,4 +24,10 @@ export default makeStyles((theme) => ({
     heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
+  Button: {
+     '& > *': {
+      margin: theme.spacing(1),
+      justifyContent: "center",
+    },
+   }
 }));
