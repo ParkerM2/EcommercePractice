@@ -15,7 +15,7 @@ const Gallery = ({cart, images}) => {
                 {images.map((product) => (
                     <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
                         <Card className={classes.root}>
-                            <CardMedia className={classes.media} image={product.media.source} title={product.name} />
+                            <CardMedia className={classes.media} image={product.media.source} category={product.categories[0].name} title={product.name} />
                         </Card>
                     </Grid>
                 ))}
