@@ -56,9 +56,9 @@ const Navbar = ({totalItems}) => {
                         TransitionComponent={Fade}
                         >
                         <MenuItem component={Link} to="/" onClick={handleClose}>Home</MenuItem>
-                        <MenuItem component={Link} to="/shop" onClick={handleClose}>Shop</MenuItem>
-                        <MenuItem component={Link} to="/about" onClick={handleClose}>About Us</MenuItem>
                         <MenuItem component={Link} to="/quote" onClick={handleClose}>Quote</MenuItem>
+                        <MenuItem component={Link} to="/shop" onClick={handleClose}>Shop</MenuItem>
+                        <MenuItem component={Link} to="/gallery" onClick={handleClose}>Gallery</MenuItem>
                         </Menu>
                 </Toolbar>
             </AppBar>
