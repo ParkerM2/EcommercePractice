@@ -21,5 +21,8 @@ export default makeStyles((theme) => ({
     cardContent: {
         display: 'flex',
         justifyContent: 'space-between',
-    }
+  },
+    heroContent: {
+    padding: theme.spacing(8, 0, 6),
+  },
 }));

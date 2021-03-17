@@ -145,7 +145,7 @@ function QuoteForm() {
         validate={validate}
         render={({ handleSubmit, reset, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit} >
-            <Paper style={{ padding: 16 }}>
+            <Paper elevation={3} style={{ padding: 16 }}>
               <Grid container alignItems="flex-start" spacing={2}>
                 <Grid item xs={6}>
                   <Field

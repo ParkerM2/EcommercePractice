@@ -8,8 +8,12 @@ import ImageParser from './lib/ImageParser';
 const App = () => {
   const [products, setProducts] = useState([]);
   const [gallery, setGallery] = useState([]);
-  const [cart, setCart] = useState({})
-
+  const [cart, setCart] = useState({});
+  const [shirts, setShirts] = useState([]);
+  const [vehicle, setVehicle] = useState([]);
+  const [carDecals, setCarDecals] = useState([]);
+  const [windowLettering, setWindowLettering] = useState([]);
+  const [outdoorSigns, setOutdoorSigns] = useState([]);
    // make call to commerce.js api to retrieve the items in the cart currently
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
@@ -22,9 +26,13 @@ const App = () => {
     //Sends product array of parsed out active products
     setProducts(ProductParser(data));
 
-    //Sends products to gallery if they are not active
-    setGallery(ImageParser(data));
-  
+    //Sends the array of products to the corresponding hooks to be used in the gallery page
+    setShirts(ImageParser(data).tShirtsArray);
+    setVehicle(ImageParser(data).vehicleWrapsArray);
+    setCarDecals(ImageParser(data).cardDecalsArray);
+    setWindowLettering(ImageParser(data).windowSignsArray);
+    setOutdoorSigns(ImageParser(data).outDoorSignsArray);
+
   }
 
   const handleAddToCart = async (productId, quantity) => {
@@ -92,7 +100,12 @@ const App = () => {
           </Route>
           {/* Gallery route */}
           <Route exact path="/gallery">
-            <Gallery cart={cart} images={gallery}/>
+            <Gallery
+              shirts={shirts}
+              vehicle={vehicle}
+              carDecals={carDecals}
+              windowLettering={windowLettering}
+              outdoorSigns={outdoorSigns} />
           </Route>
         </Switch>
         <Footer />

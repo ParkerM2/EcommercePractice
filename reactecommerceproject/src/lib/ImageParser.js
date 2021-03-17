@@ -1,19 +1,32 @@
+
 const ImageParser = (data) => {
-    let galleryArray = [];
-    // separate data into active / non active products is Arr of objects (data[i].active)
-    data.map((product) => {
-        if (product.active === false) {
-            galleryArray.push(product)
-        }
-        return galleryArray;
-    });
+    // parsing out corresponding types of product images
+    let newData = {
+         outDoorSignsArray : [],
+         windowSignsArray : [],
+         cardDecalsArray : [],
+         vehicleWrapsArray : [],
+         tShirtsArray : [],
+    }
     
-    console.log(galleryArray)
-    // confirmed ( productArray ) ( galleryArray ) 
-    // product array contains objects that are for sell
-    // gallery array contains objects that are for the image gallery
-    // Category = galleryArray[i].categories[i].name  also has .id for a corresponding random id
-    return galleryArray;
+    data.map((product) => {
+        if (product.categories[0].slug === 't-shirts') {
+            newData.tShirtsArray.push(product)
+        } if (product.categories[0].slug === 'vehicle') {
+            newData.vehicleWrapsArray.push(product)
+        } if (product.categories[0].slug === 'car-decals') {
+            newData.cardDecalsArray.push(product)
+        } if (product.categories[0].slug === 'window-lettering') {
+            newData.windowSignsArray.push(product)
+        } if (product.categories[0].slug === 'outdoor-signs') {
+            newData.outDoorSignsArray.push(product)
+        }
+        return newData;
+    })
+    
+    console.log(newData, "newdata")
+    
+    return newData
     
 }
 
