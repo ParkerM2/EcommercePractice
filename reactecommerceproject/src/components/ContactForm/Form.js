@@ -237,14 +237,14 @@ function QuoteForm() {
                 </Grid>
                   <Grid item>
                     <FormLabel component="legend" color="primary">What type of <strong>Quote</strong> are you looking for?</FormLabel>
-                  <RadioGroup onChange={handleChange} color="primary" name="typeOrder" row>
+                  <RadioGroup onChange={handleChange} color="primary.main" name="typeOrder" row>
                       <FormControlLabel
                             label="Shirts"
                             name="shirts"
                             control={<Radio />}
                             type="Radio"                            
                             value="shirt"
-                    />              
+                      />       
                       <FormControlLabel
                             label="Sign"
                             name="sign"
