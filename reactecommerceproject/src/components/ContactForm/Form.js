@@ -16,58 +16,10 @@ import {
 import SignForm from './SignForm';
 import VehicleForm from './VehicleWrapForm';
 import ShirtForm from './ShirtForm';
-// Picker
-import {
-  TimePicker,
-  DatePicker,
-} from '@material-ui/pickers';
-
-
-function DatePickerWrapper(props) {
-  const {
-    input: { name, onChange, value, ...restInput },
-    meta,
-    ...rest
-  } = props;
-  const showError =
-    ((meta.submitError && !meta.dirtySinceLastSubmit) || meta.error) &&
-    meta.touched;
-
-  return (
-    <DatePicker
-      {...rest}
-      name={name}
-      helperText={showError ? meta.error || meta.submitError : undefined}
-      error={showError}
-      inputProps={restInput}
-      onChange={onChange}
-      value={value === '' ? null : value}
-    />
-  );
-}
-
-function TimePickerWrapper(props) {
-  const {
-    input: { name, onChange, value, ...restInput },
-    meta,
-    ...rest
-  } = props;
-  const showError =
-    ((meta.submitError && !meta.dirtySinceLastSubmit) || meta.error) &&
-    meta.touched;
-
-  return (
-    <TimePicker
-      {...rest}
-      name={name}
-      helperText={showError ? meta.error || meta.submitError : undefined}
-      error={showError}
-      inputProps={restInput}
-      onChange={onChange}
-      value={value === '' ? null : value}
-    />
-  );
-}
+import axios from 'axios';
+import sendEmail from '../../lib/emailJS';
+const signTemplate = "template_u7olvj9";
+const shirtTemplate = "template_6u0hilf";
 
 
 const validate = values => {
@@ -85,11 +37,14 @@ const validate = values => {
 };
 
 
+
 function QuoteForm() {
     // Check to see if shirts/signs/vehicle wrap are selected to then display the corresponding form beneath.
   const [value, setValue] = useState('null')
   const [sending, setSending] = useState("Submit for Quote");
- 
+  const [recipient, setRecipient] = useState('')
+  const [emailTemplate, setEmailTemplate] = useState()
+  
   const handleChange = (event) => {
       console.log("event.target.value, form js 105", event.target.value)
       setValue(event.target.value);
@@ -98,10 +53,19 @@ function QuoteForm() {
   function handleQuoteForm(value) {
       switch (value) {
         case 'sign':
+          setEmailTemplate(signTemplate)
+          setValue('sign')
+          setRecipient("dale@manningSigns.net")
           return <SignForm materials={materials} onSubmit={onSubmit} />
         case 'shirt':
+          setEmailTemplate(shirtTemplate)
+          setValue('shirt')
+          setRecipient("amy@manningSigns.net")
           return <ShirtForm onSubmit={onSubmit} />
         case 'vehicle':
+          setEmailTemplate(signTemplate)
+          setValue('vehicle')
+          setRecipient("dale@manningSigns.net")
               return <VehicleForm onSubmit={onSubmit} />
           case null:
               return <Typography>Please Select an Option!</Typography>
@@ -114,8 +78,15 @@ function QuoteForm() {
     window.alert(JSON.stringify(values, 0, 2,));
     
     setSending("...Sending")
+    console.log(values)
+    // ink colors 4
+    // front and back
+    // brand
+    // short sleeve long sleeve
+    // 
 
     let data = {
+      template: emailTemplate,
       firstName: values.firstName,
       lastName: values.lastName,
       previousCustomer: values.previousCustomer,
@@ -126,9 +97,12 @@ function QuoteForm() {
       description: values.description,
       orderType: value,
       material: values.material,
+      colorQuantity: values.colorQuantity,
+      recipient: recipient,
     }
-    console.table(data)
-    
+  sendEmail(data);
+
+  setSending("Sent!")
 };
     
   return (

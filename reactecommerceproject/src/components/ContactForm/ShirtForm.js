@@ -28,7 +28,7 @@ const ShirtForm = () => {
             <Field
             fullWidth
             required
-            name="Shirt Quantity"
+            name="shirtQuantity"
             component={ReactSelectAdapter}
             options={getNum(24, 1000)}>
             </Field>
@@ -38,7 +38,7 @@ const ShirtForm = () => {
             <Field
             fullWidth
             required
-            name="Color Quantity"
+            name="colorQuantity"
             options={getNum(1,7)}
             component={ReactSelectAdapter}
             />

@@ -6,3 +6,5 @@ export { default as HomePage } from './Home/Home';
 export { default as Footer } from './Footer/Footer';
 export { default as QuoteForm } from './ContactForm/Form';
 export { default as Gallery } from './Gallery/Gallery';
+export { default as FacebookFeed } from './Socials/Facebook';
+export { default as Location } from './Location/Location';
