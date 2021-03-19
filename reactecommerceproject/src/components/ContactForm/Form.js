@@ -84,7 +84,7 @@ function QuoteForm() {
     // brand
     // short sleeve long sleeve
     // 
-
+    
     let data = {
       template: emailTemplate,
       firstName: values.firstName,
