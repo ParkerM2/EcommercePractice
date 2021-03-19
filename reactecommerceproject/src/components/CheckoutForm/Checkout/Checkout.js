@@ -25,11 +25,7 @@ const Checkout = ({cart, onCaptureCheckout, order, error}) => {
             const generateToken = async () => {
                 try {
                     const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' })
-                
-                    console.log(token)
-
                     setCheckoutToken(token);
-                
                 } catch (error) {
                     console.log(error)
                 }
@@ -39,11 +35,9 @@ const Checkout = ({cart, onCaptureCheckout, order, error}) => {
     }, [cart]);
 
     const test = (data) => {
-        setShippingData(data);
-
+      setShippingData(data);
         nextStep();
     };
-
     let Confirmation = () => (order.customer ? (
         <>
             <div>
@@ -72,9 +66,6 @@ const Checkout = ({cart, onCaptureCheckout, order, error}) => {
 const Form = () => (activeStep === 0
     ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} test={test} />
     : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={onCaptureCheckout} />);
-    
-
-    
   return (
     <>
       <CssBaseline />
