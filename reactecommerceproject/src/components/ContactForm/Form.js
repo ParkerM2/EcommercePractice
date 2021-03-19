@@ -60,7 +60,7 @@ function QuoteForm() {
         case 'shirt':
           setEmailTemplate(shirtTemplate)
           setValue('shirt')
-          setRecipient("amy@manningSigns.net")
+          setRecipient("")
           return <ShirtForm onSubmit={onSubmit} />
         case 'vehicle':
           setEmailTemplate(signTemplate)
@@ -84,7 +84,6 @@ function QuoteForm() {
     // brand
     // short sleeve long sleeve
     // 
-    
     let data = {
       template: emailTemplate,
       firstName: values.firstName,
@@ -97,9 +96,19 @@ function QuoteForm() {
       description: values.description,
       orderType: value,
       material: values.material,
-      colorQuantity: values.colorQuantity,
       recipient: recipient,
     }
+
+    switch (value) {
+      case 'sign':
+        return;
+      case 'shirt':
+        data.colorQuantity = values.colorQuantity
+        return;
+      case 'vehicle':
+        return;
+    }
+
   sendEmail(data);
 
   setSending("Sent!")

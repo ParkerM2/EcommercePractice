@@ -2,11 +2,11 @@
 const ImageParser = (data) => {
     // parsing out corresponding types of product images
     let newData = {
-         outDoorSignsArray : [],
-         windowSignsArray : [],
-         cardDecalsArray : [],
-         vehicleWrapsArray : [],
-         tShirtsArray : [],
+        outDoorSignsArray: [],
+        windowSignsArray: [],
+        cardDecalsArray: [],
+        vehicleWrapsArray: [],
+        tShirtsArray: [],
     }
     
     data.map((product) => {
@@ -22,12 +22,9 @@ const ImageParser = (data) => {
             newData.outDoorSignsArray.push(product)
         }
         return newData;
-    })
+    });
+    return newData;
     
-    console.log(newData, "newdata")
-    
-    return newData
-    
-}
+};
 
 export default ImageParser;
