@@ -33,7 +33,7 @@ const VehicleWrapForm = () => {
                 <Field
                 fullWidth
                 required
-                name="Brand"
+                name="brand"
                 component={TextField}>
                 </Field>
             </Grid>
@@ -42,7 +42,7 @@ const VehicleWrapForm = () => {
                 <Field
                 fullWidth
                 required
-                name="Model"
+                name="model"
                 component={TextField}
                 />
             </Grid>

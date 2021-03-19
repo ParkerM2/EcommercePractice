@@ -40,32 +40,31 @@ const validate = values => {
 
 function QuoteForm() {
     // Check to see if shirts/signs/vehicle wrap are selected to then display the corresponding form beneath.
-  const [value, setValue] = useState('null')
+  const [orderType, setOrderType] = useState('null')
   const [sending, setSending] = useState("Submit for Quote");
   const [recipient, setRecipient] = useState('')
   const [emailTemplate, setEmailTemplate] = useState()
   
   const handleChange = (event) => {
-      console.log("event.target.value, form js 105", event.target.value)
-      setValue(event.target.value);
+      setOrderType(event.target.value);
   };
 
-  function handleQuoteForm(value) {
-      switch (value) {
+  function handleQuoteForm(orderType) {
+      switch (orderType) {
         case 'sign':
           setEmailTemplate(signTemplate)
-          setValue('sign')
-          setRecipient("dale@manningSigns.net")
+          setOrderType('sign')
+          setRecipient("")
           return <SignForm materials={materials} onSubmit={onSubmit} />
         case 'shirt':
           setEmailTemplate(shirtTemplate)
-          setValue('shirt')
+          setOrderType('shirt')
           setRecipient("")
           return <ShirtForm onSubmit={onSubmit} />
         case 'vehicle':
           setEmailTemplate(signTemplate)
-          setValue('vehicle')
-          setRecipient("dale@manningSigns.net")
+          setOrderType('vehicle')
+          setRecipient("")
               return <VehicleForm onSubmit={onSubmit} />
           case null:
               return <Typography>Please Select an Option!</Typography>
@@ -75,45 +74,51 @@ function QuoteForm() {
   const onSubmit = async (values) => {
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     await sleep(300);
-    window.alert(JSON.stringify(values, 0, 2,));
-    
+
     setSending("...Sending")
-    console.log(values)
-    // ink colors 4
-    // front and back
-    // brand
-    // short sleeve long sleeve
-    // 
+
     let data = {
       template: emailTemplate,
       firstName: values.firstName,
       lastName: values.lastName,
-      previousCustomer: values.previousCustomer,
+      address: values.Address,
+      city: values.City,
+      previousCustomer: JSON.stringify(values.previousCustomer),
       email: values.email,
       company: values.company,
-      height: values.height,
-      width: values.width,
       description: values.description,
-      orderType: value,
-      material: values.material,
+      orderType: orderType,
       recipient: recipient,
+      zip: values.zip,
     }
 
-    switch (value) {
-      case 'sign':
-        return;
-      case 'shirt':
-        data.colorQuantity = values.colorQuantity
-        return;
-      case 'vehicle':
-        return;
+    if (data.orderType === 'sign') {
+      data.height = values.height
+      data.width = values.width
+      data.material = values.material
+       // Instead of sending email call function to deliver info to template based off of orderType
+    } else if (data.orderType === 'shirt') {
+      data.shirtQuantity = values.shirtQuantity.value
+      data.brand = values.brand.value
+      data.inkNumberFront = values.inkNumberFront.value
+      data.inkNumberBack = values.inkNumberBack.value
+      data.articleClothing = values.articleClothing.value
+       // Instead of sending email call function to deliver info to template based off of orderType
+    } else if (data.orderType === 'vehicle') {
+      data.brand = values.brand
+      data.year = values.year.value
+      data.model = values.model
+       // Instead of sending email call function to deliver info to template based off of orderType
     }
 
-  sendEmail(data);
+  // sendEmail(data);
 
   setSending("Sent!")
+    
+  console.table(data)
 };
     
+  
   return (
     <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
       <CssBaseline />
@@ -213,7 +218,7 @@ function QuoteForm() {
                 <Grid item xs={12}>
                   <Field
                     label="Previous Customer"
-                    name="previous customer"
+                    name="previousCustomer"
                     type="checkbox"                   
                     component={Checkbox}
                   />Previous Customer
@@ -246,7 +251,7 @@ function QuoteForm() {
                   </Grid>
                 </Grid>        
             <Grid>
-                {handleQuoteForm(value)} 
+                {handleQuoteForm(orderType)} 
             </Grid>
             <br></br>
               <Button variant="contained" color="primary" type="submit">{sending}</Button>

@@ -12,6 +12,40 @@ const ReactSelectAdapter = ({ input, ...rest }) => (
     <Select {...input} {...rest} searchable />
 )
 
+const brandOptions = [
+    {
+        value: "Gildan", label: "Gildan"
+    },
+    {
+        value: "Comfort Color", label: "Comfort Color"
+    },
+    {
+        value: "Bella+Canvas", label: "Bella+Canvas"
+    },
+    {
+        value: "Anvil", label: "Anvil"
+    },
+    {
+        value: "Not Sure", label: "Not Sure"
+    },
+    {
+        value: "Other", label: "Other"
+    },
+]
+const clothingArticle = [
+    {
+        value: "Short Sleeve", label: "Short Sleeve"
+    },
+    {
+        value: "Long Sleeve", label: "Long Sleeve"
+    },
+    {
+        value: "Hoodie", label: "Hoodie"
+    },
+    {
+        value: "Other", label: "Other"
+    },
+]
 
 const ShirtForm = () => {
     return (
@@ -20,7 +54,7 @@ const ShirtForm = () => {
      <div style={{ margin: 'auto', maxWidth: 600 }}>
     <CssBaseline />
     <Grid container>
-    <FormLabel component="legend" color="primary">Please answer these questions about your shirt order!</FormLabel>
+    <br></br>
     </Grid>
         <Grid container spacing={3}>
         <Grid item xs={6}>
@@ -33,13 +67,45 @@ const ShirtForm = () => {
             options={getNum(24, 1000)}>
             </Field>
         </Grid>
-        <Grid item xs={6}>
-            <FormLabel>Quantity of Colors:</FormLabel>
+        <Grid item xs={3}>
+            <FormLabel>Front Ink Count</FormLabel>
             <Field
             fullWidth
             required
-            name="colorQuantity"
-            options={getNum(1,7)}
+            name="inkNumberFront"
+            options={getNum(1,5)}
+            component={ReactSelectAdapter}
+            />
+        </Grid>
+        <Grid item xs={3}>
+            <FormLabel>Back Ink Count</FormLabel>
+            <Field
+            fullWidth
+            required
+            name="inkNumberBack"
+            options={getNum(1,5)}
+            component={ReactSelectAdapter}
+            />
+        </Grid>
+    </Grid>
+    <Grid container spacing={3}>
+        <Grid item xs={6}>
+            <FormLabel>Brand of Shirt</FormLabel>
+            <Field
+            fullWidth
+            required
+            name="brand"
+            component={ReactSelectAdapter}
+            options={brandOptions}>
+            </Field>
+        </Grid>
+        <Grid item xs={6}>
+            <FormLabel>Type:</FormLabel>
+            <Field
+            fullWidth
+            required
+            name="articleClothing"
+            options={clothingArticle}
             component={ReactSelectAdapter}
             />
         </Grid>
