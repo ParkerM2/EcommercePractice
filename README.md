@@ -37,7 +37,7 @@
 ![Node](src/assets/nodejs.png)
 ![Material UI](src/assets/materialuilogo.png)
 ![Stripe](src/assets/stripelogo.png)
-![Node](src/assets/nodejs.png)
+![Node](reactecommerceproject/src/assets/nodejs.png)
 ---
 ## Installation 🔧
 
