@@ -24,7 +24,7 @@
 <div>
    1. Creating an easier way to Quote orders. Before this website all orders were done in-person or over the phone. This simplifies the process allowing the owner to specify the requirements of an order beforehand. This saves valuable time during the work day.  
 </div>
-
+<br></br>
 <div>
     2. Gives the owners a Point Of Sale. This new revenue stream will take the place of an outdated system of selling shirts and election signs through a singular facebook post. This online store is centered around commerce.js API. CommerceJS offers a back-end solution for the store and gallery. The checkout form and checkout information are built utilizing StripeJS software.
 </div>
