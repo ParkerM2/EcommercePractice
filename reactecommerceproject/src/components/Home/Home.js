@@ -15,6 +15,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import vehicleWrap from './../../assets/vehiclewrap.jpg';
 import tShirt from './../../assets/tShirt.png';
 import outdoorSign from './../../assets/outdoorSign.jpg';
+import backgroundImg from '../../assets/396407.png';
 
 
 
@@ -48,11 +49,13 @@ const tiers = [
   title: 'Manning Signs & Shirts',
   description:
     " We offer a large range of T-Shirt and Sign options! Feel free to contact us for a quote or check out our online store to see whats in stock!",
-  image: 'url(https://github.com/ParkerM2/EcommercePractice/blob/7d8f59c16f7bfee225baa04001343c737102d123/reactecommerceproject/src/assets/396407.png)',
+  image: backgroundImg,
   imgText: 'manning signs image',
   linkText: 'Click here to view our online store!',
 };
 
+
+const font = "'Niconne', cursive";
 
 const HomePage = () => {
     const classes = useStyles();
@@ -62,20 +65,20 @@ const HomePage = () => {
         <CssBaseline />
       <br></br>
       <Container maxWidth="lg" component="main">
-      <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
+      <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${backgroundImg})` }}>
       {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+      {<img component="img" style={{ display: 'none' }} src={backgroundImg} alt={post.imageText} />}
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>
           <div className={classes.mainFeaturedPostContent}>
-            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+            <Typography component="h1" variant="h2" style={{fontFamily: font}} gutterBottom>
               {post.title}
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
+            <Typography variant="h5" style={{color: 'white'}} paragraph>
               {post.description}
                 </Typography>
-                <Button component={Link} to="/shop" variant="outlined" color="inherit">
+                <Button component={Link} to="/shop" variant="outlined" color="primary.main" >
                   {post.linkText}
                 </Button>
           </div>

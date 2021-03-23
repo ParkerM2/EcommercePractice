@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://github.com/ParkerM2/EcommercePractice/blob/7d8f59c16f7bfee225baa04001343c737102d123/reactecommerceproject/src/assets/396407.png)',
+    backgroundImage: 'url(https://github.com/ParkerM2/ManningSigns/blob/main/reactecommerceproject/src/assets/396407.png)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -61,6 +61,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(0,0,0,.3)',
   },
   mainFeaturedPostContent: {
+    color: 'skyblue',
+    textColor:'white',
     position: 'relative',
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {

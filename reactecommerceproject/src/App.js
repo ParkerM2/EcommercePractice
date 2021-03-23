@@ -8,6 +8,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core";
 import CssBaseline from '@material-ui/core/CssBaseline';
 
+
 const App = () => {
   const [products, setProducts] = useState([]);
   const [gallery, setGallery] = useState([]);
