@@ -22,12 +22,12 @@
 ## 👀 Description 👀
 **The Manning Signs website has multiple purposes**
 <div>
-    <h1>1.</h1>
+    <h3>1.</h3>
    Creating an easier way to Quote orders. Before this website all orders were done in-person or over the phone. This simplifies the process allowing the owner to specify the requirements of an order beforehand. This saves valuable time during the work day.  
 </div>
 
 <div>
-    <h1>2.</h1>
+    <h3>2.</h3>
     Gives the owners a Point Of Sale. This new revenue stream will take the place of an outdated system of selling shirts and election signs through a singular facebook post. This online store is centered around commerce.js API. CommerceJS offers a back-end solution for the store and gallery. The checkout form and checkout information are built utilizing StripeJS software.
 </div>
 
