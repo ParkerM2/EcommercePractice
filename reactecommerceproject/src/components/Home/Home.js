@@ -60,6 +60,7 @@ const HomePage = () => {
     return ( 
       <>
         <CssBaseline />
+      <br></br>
       <Container maxWidth="lg" component="main">
       <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
       {/* Increase the priority of the hero background image */}

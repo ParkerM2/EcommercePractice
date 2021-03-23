@@ -4,6 +4,9 @@ import { Products, Navbar, Cart, Checkout, HomePage, Footer, QuoteForm, Gallery,
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductParser from './lib/ProductParser';
 import ImageParser from './lib/ImageParser';
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core";
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -59,6 +62,11 @@ const App = () => {
     setCart(cart);
   }
 
+  const theme = createMuiTheme({
+  palette: {
+    type: "dark"
+  }
+});
   useEffect(() => {
     //load our products on start, and set products from commerce.js
     fetchProducts();
@@ -69,6 +77,9 @@ const App = () => {
 
   
   return (
+    <>
+    <CssBaseline />
+    <ThemeProvider theme={theme}>
     <Router>
       <div>
         <Navbar totalItems={cart.total_unique_items} />
@@ -117,6 +128,8 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+      </ThemeProvider>
+      </>
   )
 }
 
