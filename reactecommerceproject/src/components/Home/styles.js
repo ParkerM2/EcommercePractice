@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'src(../../assets/396407.jpg)',
+    backgroundImage: 'url(https://github.com/ParkerM2/EcommercePractice/blob/7d8f59c16f7bfee225baa04001343c737102d123/reactecommerceproject/src/assets/396407.png)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',

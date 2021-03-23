@@ -48,7 +48,7 @@ const tiers = [
   title: 'Manning Signs & Shirts',
   description:
     " We offer a large range of T-Shirt and Sign options! Feel free to contact us for a quote or check out our online store to see whats in stock!",
-  image: 'src(https://source.unsplash.com/random)',
+  image: 'url(https://github.com/ParkerM2/EcommercePractice/blob/7d8f59c16f7bfee225baa04001343c737102d123/reactecommerceproject/src/assets/396407.png)',
   imgText: 'manning signs image',
   linkText: 'Click here to view our online store!',
 };
@@ -62,9 +62,9 @@ const HomePage = () => {
         <CssBaseline />
       <br></br>
       <Container maxWidth="lg" component="main">
-      <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `src(${post.image})` }}>
+      <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
       {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src="../../assets/396407.jpg" alt={post.imageText} />}
+      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>
