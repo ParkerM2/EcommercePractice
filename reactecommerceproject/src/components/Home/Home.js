@@ -48,7 +48,7 @@ const tiers = [
   const post = {
   title: 'Manning Signs & Shirts',
   description:
-    " We offer a large range of T-Shirt and Sign options! Feel free to contact us for a quote or check out our online store to see whats in stock!",
+    " We offer a large range of T-Shirt and Sign Solutions! Feel free to contact us for a quote or check out our online store to see whats in stock!",
   image: backgroundImg,
   imgText: 'manning signs image',
   linkText: 'Click here to view our online store!',
