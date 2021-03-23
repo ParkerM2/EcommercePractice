@@ -26,10 +26,6 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
-  cardHeader: {
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[100],
-  },
   cardPricing: {
     display: 'flex',
     justifyContent: 'center',
