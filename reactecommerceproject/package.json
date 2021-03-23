@@ -37,15 +37,16 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-select": "^4.2.1",
+    "simple-react-google-maps": "^1.1.2",
     "web-vitals": "^0.2.4"
   },
-    "scripts": {
+  "scripts": {
     "start": "react-dotenv && react-scripts start",
     "build": "react-dotenv && react-scripts build",
-    "serve": "react-dotenv && serve build", 
+    "serve": "react-dotenv && serve build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-    },
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -1,51 +1,27 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import GoogleMaps from 'simple-react-google-maps';
+import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 
-class GoogleMapImage extends Component {
-    constructor(props, context) {
-        super(props, context);
-    }
 
-    getSrcParams() {
-        let params = '102 Morgan Road Greenville MS';
-        let counter = 0;
-        let defaultMarker = '&markers=blue|';
+const googleKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
-        for (let key in this.props.config) {
-            params += (counter > 0 ? "&" : "");
-            params += `${key}=${this.props.config[key]}`;
-            counter++;
-        }
+const Location = () => {
 
-        if (!Object.keys(this.props.config).includes('markers')) {
-            params += defaultMarker + this.props.config.center;
-        }
+    return (
+        <>
+    <Container >
+    <GoogleMaps
+        apiKey={googleKey}
+        style={{height: "400px", width: "100%"}}
+        zoom={6}
+        center={{lat: 33.3928269, lng: -91.0093956}}
+        markers={{lat: 33.3928269, lng: -91.0093956}} //optional
+    />
+    </Container>
+    </>
+)
 
-        return params;
-    }
-
-    render() {
-        return (
-            <div 
-                className="map-image-wrapper"
-                style={this.props.wrapperStyle || null}
-            >
-                <img 
-                    src={"https://maps.googleapis.com/maps/api/staticmap?" + this.getSrcParams()} 
-                    style={this.props.style || null}
-                />
-            </div>
-        );
-    }
 }
 
-GoogleMapImage.propTypes = {
-    config: PropTypes.shape({
-        center: PropTypes.string.isRequired,
-        size: PropTypes.string.isRequired,
-        zoom: PropTypes.string.isRequired,
-        key: PropTypes.string.isRequired
-    }).isRequired
-};
-
-export default GoogleMapImage;
+export default Location;

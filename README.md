@@ -1,3 +1,4 @@
+
 <h1 align="center" class="fas fa-microscope">Manning Signs</h1>
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
@@ -9,7 +10,7 @@
 
 ## [Click here to go to the Website!](https://manningsigns.netlify.app/)
 
-![HomePage](https://github.com/ParkerM2/EcommercePractice/blob/553ef7dddb34fdf3867d0d763c61d57993f14085/reactecommerceproject/src/assets/homepage.PNG)
+![HomePage](https://github.com/ParkerM2/EcommercePractice/blob/main/reactecommerceproject/src/assets/ManningsignsUpdated.PNG)
 
 ### 🏠 [Project Homepage](https://github.com/ParkerM2/Manningsigns)
 
