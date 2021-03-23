@@ -8,12 +8,14 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 import {Link} from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import CardMedia from '@material-ui/core/CardMedia';
 import vehicleWrap from './../../assets/vehiclewrap.jpg';
 import tShirt from './../../assets/tShirt.png';
 import outdoorSign from './../../assets/outdoorSign.jpg';
+
 
 
 const tiers = [
@@ -42,22 +44,43 @@ const tiers = [
         url: ["/quote", "/gallery"]
   },
 ];
+  const post = {
+  title: 'Manning Signs',
+  description:
+    " We offer a large range of T-Shirt and Sign options! Feel free to contact us for a quote or check out our online store to see whats in stock!",
+  image: 'url(https://source.unsplash.com/random)',
+  imgText: 'main image description',
+  linkText: 'Click here to view our online store!',
+};
 
 
 const HomePage = () => {
     const classes = useStyles();
     
     return ( 
-    <>
-      <CssBaseline />
-      {/* Hero unit */}
-      <Container  maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography color="primary.main" component="h1" variant="h2" align="center" gutterBottom>
-          Manning Signs
-        </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" component="p">
-        We offer a large range of T-Shirt and Sign options! Feel free to contact us for a quote or check out our online store to see whats in stock!
-        </Typography>
+      <>
+        <CssBaseline />
+      <Container maxWidth="lg" component="main">
+      <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
+      {/* Increase the priority of the hero background image */}
+      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+      <div className={classes.overlay} />
+      <Grid container>
+        <Grid item md={6}>
+          <div className={classes.mainFeaturedPostContent}>
+            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+              {post.title}
+            </Typography>
+            <Typography variant="h5" color="inherit" paragraph>
+              {post.description}
+                </Typography>
+                <Button component={Link} to="/shop" variant="contained" color="primary">
+                  {post.linkText}
+                </Button>
+          </div>
+        </Grid>
+      </Grid>
+      </Paper>
       </Container>
       {/* End hero unit */}
       <Container maxWidth="lg" component="main">
