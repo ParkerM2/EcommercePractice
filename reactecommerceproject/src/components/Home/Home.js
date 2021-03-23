@@ -49,7 +49,7 @@ const tiers = [
   description:
     " We offer a large range of T-Shirt and Sign options! Feel free to contact us for a quote or check out our online store to see whats in stock!",
   image: 'url(https://source.unsplash.com/random)',
-  imgText: 'main image description',
+  imgText: 'manning signs image',
   linkText: 'Click here to view our online store!',
 };
 
@@ -75,7 +75,7 @@ const HomePage = () => {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
                 </Typography>
-                <Button component={Link} to="/shop" variant="contained" color="primary">
+                <Button component={Link} to="/shop" variant="outlined" color="inherit">
                   {post.linkText}
                 </Button>
           </div>
@@ -113,12 +113,12 @@ const HomePage = () => {
                   </ul>
                 </CardContent>
                 <CardActions>
-                    <Button fullWidth component={Link} to={tier.url[0]} variant={tier.buttonVariant} color="primary">
+                    <Button fullWidth component={Link} to={tier.url[0]} variant={tier.buttonVariant} color="primary.main">
                     {tier.buttonText[0]}
                     </Button>
                 </CardActions>
                 <CardActions>
-                  <Button fullWidth component={Link} to={tier.url[1]} variant={tier.buttonVariant} color="primary">
+                  <Button fullWidth component={Link} to={tier.url[1]} variant={tier.buttonVariant} color="primary.main">
                     {tier.buttonText[1]}
                   </Button>
                 </CardActions>

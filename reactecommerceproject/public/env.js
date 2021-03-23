@@ -210,7 +210,7 @@ window.env = {
   "npm_package_scripts_test": "react-scripts test",
   "npm_package_version": "0.1.0",
   "NUMBER_OF_PROCESSORS": "8",
-  "OLDPWD": "C:/Users/Parke/Desktop/Ecommerce Project",
+  "OLDPWD": "C:/Users/Parke/Desktop/Ecommerce Project/reactecommerceproject/build",
   "OneDrive": "C:\\Users\\Parke\\OneDrive",
   "OneDriveConsumer": "C:\\Users\\Parke\\OneDrive",
   "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
