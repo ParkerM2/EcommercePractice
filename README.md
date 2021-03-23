@@ -37,7 +37,7 @@
 ![Node](src/assets/nodejs.png)
 ![Material UI](src/assets/materialuilogo.png)
 ![Stripe](src/assets/stripelogo.png)
-![Node](reactecommerceproject/src/assets/node)
+![Node](https://github.com/ParkerM2/EcommercePractice/blob/b0881018892ede4aef17f9b91809bd56ea7eacdb/reactecommerceproject/src/assets/Nodejs.png)
 ---
 ## Installation 🔧
 
