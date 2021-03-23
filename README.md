@@ -32,11 +32,11 @@
 ---
 
 ## Techonologies Used
-![CommerceJS](src/assets/commercejslogo.png)
-![React](src/assets/ReactJs.png)
-![Node](src/assets/nodejs.png)
-![Material UI](src/assets/materialuilogo.png)
-![Stripe](src/assets/stripelogo.png)
+![CommerceJS](https://github.com/ParkerM2/EcommercePractice/blob/b0881018892ede4aef17f9b91809bd56ea7eacdb/reactecommerceproject/src/assets/Commercejslogo.png)
+![React](https://github.com/ParkerM2/EcommercePractice/blob/b0881018892ede4aef17f9b91809bd56ea7eacdb/reactecommerceproject/src/assets/ReactJs.png)
+![Node](https://github.com/ParkerM2/EcommercePractice/blob/b0881018892ede4aef17f9b91809bd56ea7eacdb/reactecommerceproject/src/assets/Nodejs.png)
+![Material UI](https://github.com/ParkerM2/EcommercePractice/blob/b0881018892ede4aef17f9b91809bd56ea7eacdb/reactecommerceproject/src/assets/materialuilogo.png)
+![Stripe](https://github.com/ParkerM2/EcommercePractice/blob/b0881018892ede4aef17f9b91809bd56ea7eacdb/reactecommerceproject/src/assets/Stripelogo.png)
 ![Node](https://github.com/ParkerM2/EcommercePractice/blob/b0881018892ede4aef17f9b91809bd56ea7eacdb/reactecommerceproject/src/assets/Nodejs.png)
 ---
 ## Installation 🔧
