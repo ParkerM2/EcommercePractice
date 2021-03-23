@@ -11,9 +11,7 @@ function preventDefault(event) {
 
 const Image = ({shirts, vehicle, carDecals, windowLettering, outdoorSigns}) => {
     const classes = useStyles()
-    const [elShirts, setShirts] = useState([]);
-    
-    const [activeImages, setActiveImages] = useState([])
+    const [activeImages, setActiveImages] = useState([shirts])
 
     return (
         <>
@@ -26,15 +24,15 @@ const Image = ({shirts, vehicle, carDecals, windowLettering, outdoorSigns}) => {
         </Grid>
          <Container maxWidth="lg" component="main" className={classes.heroContent}>
             <Grid container spacing={5} alignItems="flex-end">
-                    {activeImages.map((shirts) => (
-                        <Grid item key={shirts.title} xs={12} md={4}>
+                    {activeImages.map((image) => (
+                        <Grid item key={image.title} xs={12} md={4}>
                             <Card className={classes.root}>
                                 <CardMedia
                                     component="img"
-                                    alt={shirts.title}
+                                    alt={image.title}
                                     height="300"
-                                    src={shirts.media.source}
-                                    title={shirts.title}
+                                    src={image.media.source}
+                                    title={image.title}
                                 />
                             </Card>
                         </Grid>
