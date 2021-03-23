@@ -112,13 +112,9 @@ function QuoteForm() {
     }
 
   // sendEmail(data);
-
   setSending("Sent!")
-    
-  console.table(data)
 };
     
-  
   return (
     <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
       <CssBaseline />

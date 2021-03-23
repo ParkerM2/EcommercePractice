@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography, CssBaseline } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 import shopImg from '../../assets/PinClipart.com_ramp-clipart_3220521.png'
 import useStyles from './styles'; 
@@ -35,7 +35,7 @@ const Navbar = ({totalItems}) => {
         
     return (
         <>
-            
+            <CssBaseline />
             <Container maxWidth="lg" component="main" spacing={5}>
                 <br></br>
             <AppBar position="sticky" className={classes.appbar} color="inherit">

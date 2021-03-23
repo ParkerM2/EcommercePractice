@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import Product from './Product/Product'; 
 import useStyles from './style';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 
 const Products = ({ products, onAddToCart }) => {
@@ -9,6 +10,8 @@ const Products = ({ products, onAddToCart }) => {
     const classes = useStyles();
     // setup the array of products to passed onto the product page
     return (
+        <>
+        <CssBaseline />
         <main className={classes.content}>
             <div className={classes.toolbar}/>
             <Grid container justify="center" spacing={4}>
@@ -18,7 +21,8 @@ const Products = ({ products, onAddToCart }) => {
                     </Grid>
                 ))}
             </Grid>
-        </main>
+            </main>
+        </>
     );
 }
 

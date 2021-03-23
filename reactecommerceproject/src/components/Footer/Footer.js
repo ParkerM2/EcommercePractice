@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import { CssBaseline } from '@material-ui/core';
 
     function Copyright() {
         return (
@@ -39,7 +40,9 @@ import Box from '@material-ui/core/Box';
 const Footer = () => {
     const classes = useStyles();
 
-   return (
+  return (
+     <>
+      <CssBaseline />
     <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
           {footers.map((footer) => (
@@ -63,6 +66,7 @@ const Footer = () => {
           <Copyright />
         </Box>
       </Container >
+      </>
     )
 }
 
