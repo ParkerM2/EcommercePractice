@@ -22,7 +22,7 @@
 ## 👀 Description 👀
 **The Manning Signs website has multiple purposes**
 <div>
-   <h3>1.</h3>Creating an easier way to Quote orders. Before this website all orders were done in-person or over the phone. This simplifies the process allowing the owner to specify the requirements of an order beforehand. This saves valuable time during the work day.  
+   <strong>1.</strong>Creating an easier way to Quote orders. Before this website all orders were done in-person or over the phone. This simplifies the process allowing the owner to specify the requirements of an order beforehand. This saves valuable time during the work day.  
 </div>
 
 <div>
