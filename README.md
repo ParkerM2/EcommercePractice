@@ -32,10 +32,12 @@
 ---
 
 ## Techonologies Used
-![](client/public/images/react.png)
-![](client/public/images/MySQL-logo.png)
-![](client/public/images/node-js-logo.png)
-
+![CommerceJS](src/assets/commercejslogo.png)
+![React](src/assets/ReactJs.png)
+![Node](src/assets/nodejs.png)
+![Material UI](src/assets/materialuilogo.png)
+![Stripe](src/assets/stripelogo.png)
+![Node](src/assets/nodejs.png)
 ---
 ## Installation 🔧
 
