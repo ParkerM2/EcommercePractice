@@ -9,13 +9,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import Link from '@material-ui/core/Paper';
+import {Link} from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import CardMedia from '@material-ui/core/CardMedia';
 import vehicleWrap from './../../assets/vehiclewrap.jpg';
 import tShirt from './../../assets/tShirt.png';
 import outdoorSign from './../../assets/outdoorSign.jpg';
 import backgroundImg from '../../assets/396407.png';
+
 
 
 
@@ -77,10 +78,10 @@ const HomePage = () => {
             </Typography>
             <Typography variant="h5" style={{color: 'white'}} paragraph>
               {post.description}
-                </Typography>
-                <Button component={Link} to="/shop" variant="outlined" color="primary.main" >
+            </Typography>
+              <Button component={Link} to="/shop" variant="contained" color="secondary" >
                   {post.linkText}
-                </Button>
+              </Button>
           </div>
         </Grid>
       </Grid>
