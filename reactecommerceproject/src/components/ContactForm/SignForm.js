@@ -11,7 +11,16 @@ import {
 import getMats from '../../lib/materials';
 
 const ReactSelectAdapter = ({ input, ...rest }) => (
-    <Select {...input} {...rest} searchable />
+    <Select {...input} {...rest} theme={theme => ({
+      ...theme,
+      borderRadius: 1,
+      colors: {
+        ...theme.colors,
+        neutral0: 'grey',
+        primary25: 'grey',
+        primary75: 'black'
+      },
+    })} searchable />
 )
 
 

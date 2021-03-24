@@ -5,7 +5,7 @@ function getNum(x,y) {
         let numArray = []
     for (let i = x; i < y; i++) {
         numArray.push(
-           {value: i, label: i}
+           {value: i, label: i,}
         )
     };
     return numArray;

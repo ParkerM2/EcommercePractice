@@ -11,8 +11,18 @@ import getNum from '../../lib/shirtQuantity';
 import moment from 'moment';
 var year = moment().format('YYYY');
 const ReactSelectAdapter = ({ input, ...rest }) => (
-    <Select {...input} {...rest} searchable />
+    <Select {...input} {...rest} theme={theme => ({
+      ...theme,
+      borderRadius: 1,
+      colors: {
+        ...theme.colors,
+        neutral0: 'grey',
+        primary25: 'grey',
+        primary75: 'black'
+      },
+    })} searchable />
 )
+
 
 
 

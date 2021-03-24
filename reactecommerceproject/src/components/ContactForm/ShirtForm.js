@@ -8,8 +8,19 @@ import {
   FormLabel,
 } from '@material-ui/core';
 import getNum from '../../lib/shirtQuantity';
+import './style.css';
+
 const ReactSelectAdapter = ({ input, ...rest }) => (
-    <Select {...input} {...rest} searchable />
+    <Select {...input} {...rest} theme={theme => ({
+      ...theme,
+      borderRadius: 1,
+      colors: {
+        ...theme.colors,
+        neutral0: 'grey',
+        primary25: 'grey',
+        primary75: 'black'
+      },
+    })} searchable />
 )
 
 const brandOptions = [
@@ -50,8 +61,7 @@ const clothingArticle = [
 const ShirtForm = () => {
     return (
         <>
-    <br></br>
-     <div style={{ margin: 'auto', maxWidth: 600 }}>
+        <br></br>
     <CssBaseline />
     <Grid container>
     <br></br>
@@ -67,11 +77,12 @@ const ShirtForm = () => {
             options={getNum(24, 1000)}>
             </Field>
         </Grid>
-        <Grid item xs={3}>
+        <Grid color="inherit" item xs={3}>
             <FormLabel>Front Ink Count</FormLabel>
             <Field
             fullWidth
             required
+            color="inherit"
             name="inkNumberFront"
             options={getNum(1,5)}
             component={ReactSelectAdapter}
@@ -121,7 +132,6 @@ const ShirtForm = () => {
             label="Enter your message here:"
         />  
     </Grid>
-    </div>
         </>
     
     )

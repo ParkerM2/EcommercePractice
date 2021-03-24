@@ -250,7 +250,7 @@ function QuoteForm() {
                 {handleQuoteForm(orderType)} 
             </Grid>
             <br></br>
-              <Button variant="contained" color="primary" type="submit">{sending}</Button>
+              <Button variant="outlined" color="inherit" type="submit">{sending}</Button>
             </Paper>
           </form>
         )}
