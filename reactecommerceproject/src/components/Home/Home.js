@@ -9,7 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import {Link} from 'react-router-dom';
+import Link from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import CardMedia from '@material-ui/core/CardMedia';
 import vehicleWrap from './../../assets/vehiclewrap.jpg';
@@ -115,7 +115,7 @@ const HomePage = () => {
                     ))}
                   </ul>
                 </CardContent>
-                <CardActions>
+                <CardActions >
                     <Button fullWidth component={Link} to={tier.url[0]} variant="outlined" color="inherit">
                     {tier.buttonText[0]}
                     </Button>

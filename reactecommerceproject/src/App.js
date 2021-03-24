@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart, Checkout, HomePage, Footer, QuoteForm, Gallery, FacebookFeed, Location} from './components';
+import { Products, Navbar, Cart, Checkout, HomePage, Footer, QuoteForm, Gallery, Socials, Location} from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductParser from './lib/ProductParser';
 import ImageParser from './lib/ImageParser';
@@ -119,8 +119,8 @@ const App = () => {
               windowLettering={windowLettering}
               outdoorSigns={outdoorSigns} />
           </Route>
-          <Route exact path="/Facebook">
-            <FacebookFeed />
+          <Route exact path="/socials">
+            <Socials />
           </Route>
           <Route exact path="/Location">
             <Location />
