@@ -10,7 +10,7 @@
 
 ## [Click here to go to the Website!](https://manningsigns.netlify.app/)
 
-![HomePage](https://github.com/ParkerM2/EcommercePractice/blob/main/reactecommerceproject/src/assets/ManningsignsUpdated.PNG)
+![HomePage](https://github.com/ParkerM2/EcommercePractice/blob/main/reactecommerceproject/src/assets/updatedhomepage.PNG)
 
 ### 🏠 [Project Homepage](https://github.com/ParkerM2/Manningsigns)
 
