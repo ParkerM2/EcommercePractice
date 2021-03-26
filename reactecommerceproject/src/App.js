@@ -8,6 +8,9 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core";
 import CssBaseline from '@material-ui/core/CssBaseline';
 
+ 
+
+
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -79,8 +82,8 @@ const App = () => {
   
   return (
     <>
-    <CssBaseline />
-    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
     <Router>
       <div>
         <Navbar totalItems={cart.total_unique_items} />
@@ -128,7 +131,7 @@ const App = () => {
         </Switch>
         <Footer />
       </div>
-    </Router>
+      </Router>
       </ThemeProvider>
       </>
   )

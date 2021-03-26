@@ -16,8 +16,8 @@ import {
 import SignForm from './SignForm';
 import VehicleForm from './VehicleWrapForm';
 import ShirtForm from './ShirtForm';
-import axios from 'axios';
-import sendEmail from '../../lib/emailJS';
+import shirtEmailTemplate from '../../lib/shirtTemplate';
+
 const signTemplate = "template_u7olvj9";
 const shirtTemplate = "template_6u0hilf";
 
@@ -59,7 +59,7 @@ function QuoteForm() {
         case 'shirt':
           setEmailTemplate(shirtTemplate)
           setOrderType('shirt')
-          setRecipient("")
+          setRecipient("parkerlmanning@hotmail.com")
           return <ShirtForm onSubmit={onSubmit} />
         case 'vehicle':
           setEmailTemplate(signTemplate)
@@ -77,6 +77,7 @@ function QuoteForm() {
 
     setSending("...Sending")
 
+
     let data = {
       template: emailTemplate,
       firstName: values.firstName,
@@ -90,7 +91,13 @@ function QuoteForm() {
       orderType: orderType,
       recipient: recipient,
       zip: values.zip,
-    }
+    };
+
+    if (data.previousCustomer === 'undefined') {
+      data.previousCustomer = 'New Client'
+    } else {
+      data.previousCustomer = 'Returning Client'
+    };
 
     if (data.orderType === 'sign') {
       data.height = values.height
@@ -98,10 +105,10 @@ function QuoteForm() {
       data.material = values.material
        // Instead of sending email call function to deliver info to template based off of orderType
     } else if (data.orderType === 'shirt') {
-      data.shirtQuantity = values.shirtQuantity.value
+      data.shirtQuantity = JSON.stringify(values.shirtQuantity.value)
       data.brand = values.brand.value
-      data.inkNumberFront = values.inkNumberFront.value
-      data.inkNumberBack = values.inkNumberBack.value
+      data.inkNumberFront = JSON.stringify(values.inkNumberFront.value)
+      data.inkNumberBack = JSON.stringify(values.inkNumberBack.value)
       data.articleClothing = values.articleClothing.value
        // Instead of sending email call function to deliver info to template based off of orderType
     } else if (data.orderType === 'vehicle') {
@@ -109,10 +116,11 @@ function QuoteForm() {
       data.year = values.year.value
       data.model = values.model
        // Instead of sending email call function to deliver info to template based off of orderType
-    }
-
+    };
+  console.log(data)
   // sendEmail(data);
-  setSending("Sent!")
+    setSending("Sent!")
+    shirtEmailTemplate(data)
 };
     
   return (
@@ -249,7 +257,7 @@ function QuoteForm() {
             <Grid>
                 {handleQuoteForm(orderType)} 
             </Grid>
-            <br></br>
+              <br></br>
               <Button variant="outlined" color="inherit" type="submit">{sending}</Button>
             </Paper>
           </form>
