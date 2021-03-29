@@ -1,25 +1,22 @@
 import email from './emailJS';
 
-const shirtEmailTemplate = (data) => {
-    // create new object to pass into the emailJS template so that you can call it from one variable
+const signEmailTemplate = (data) => {
 // address: "11500 Jollyville Rd"
-// articleClothing: "Hoodie"
-// brand: "Bella+Canvas"
+// brand: "Jeep"
 // city: "Austin"
 // company: "Manning Signs"
-// description: undefined
+// description: "dkejslkjaf;lsdkjfasdfa"
 // email: "parkerlmanning@hotmail.com"
 // firstName: "Parker"
-// inkNumberBack: 3
-// inkNumberFront: "4"
 // lastName: "Manning"
-// orderType: "shirt"
+// model: "1014"
+// orderType: "vehicle"
 // previousCustomer: "Returning Client"
 // recipient: ""
-// shirtQuantity: 26
-// template: "template_6u0hilf"
+// state: undefined
+// template: "template_u7olvj9"
+// year: 1904
 // zip: "78759-2465"
-// state: '""
     let emailTemplate = {
         template: data.template,
         to: data.recipient,
@@ -33,12 +30,13 @@ const shirtEmailTemplate = (data) => {
             orderType: `${data.orderType}`
         },
         description: `${data.description}`,
-        shirtInfo: {
+        orderInfo: {
+            material: `${data.material}`,
+            height: `${data.height}`,
+            width: `${data.width}`,
             brand: `${data.brand}`,
-            numOfShirts: `${data.shirtQuantity}`,
-            type: `${data.articleClothing}`,
-            backInks: `${data.inkNumberBack}`,
-            frontInks: `${data.inkNumberFront}`,
+            model: `${data.model}`,
+            year: `${data.year}`,
         }
 
     }
@@ -46,4 +44,4 @@ const shirtEmailTemplate = (data) => {
 
 }
 
-export default shirtEmailTemplate;
+export default signEmailTemplate;

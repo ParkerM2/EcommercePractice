@@ -113,7 +113,7 @@ const App = () => {
           <Route exact path="/quote">
             <QuoteForm cart={cart}/>
           </Route>
-          {/* Gallery route */}
+          {/* Gallery Route */}
           <Route exact path="/gallery">
             <Gallery
               shirts={shirts}
@@ -121,7 +121,8 @@ const App = () => {
               carDecals={carDecals}
               windowLettering={windowLettering}
               outdoorSigns={outdoorSigns} />
-          </Route>
+              </Route>
+            {/* Socials Route */}
           <Route exact path="/socials">
             <Socials />
           </Route>
