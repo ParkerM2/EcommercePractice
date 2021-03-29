@@ -8,3 +8,4 @@ export { default as QuoteForm } from './ContactForm/Form';
 export { default as Gallery } from './Gallery/Gallery';
 export { default as Socials } from './Socials/Socials';
 export { default as Location } from './Location/Location';
+export { default as Sent } from './SuccessQuote/Success';

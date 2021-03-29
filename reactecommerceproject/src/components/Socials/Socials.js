@@ -1,7 +1,7 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import { Typography, Card, CardActions, CardContent, CardHeader, Grid, CardMedia, Button, Link } from '@material-ui/core';
+import { Card, CardActions, CardHeader, Grid, CardMedia, Button,} from '@material-ui/core';
 import useStyles from '../Home/styles';
 import bobPic from '../../assets/bobPic.png';
 import danaPic from '../../assets/danaPic.png';

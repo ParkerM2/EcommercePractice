@@ -6,6 +6,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import materials from '../../lib/materials';
+import { Link } from 'react-router-dom';
 import {
   Typography,
   Paper,
@@ -259,7 +260,7 @@ function QuoteForm() {
                 {handleQuoteForm(orderType)} 
             </Grid>
               <br></br>
-              <Button variant="outlined" color="inherit" type="submit">{sending}</Button>
+              <Button variant="outlined" component={Link} to="/sent" color="inherit" type="submit">{sending}</Button>
             </Paper>
           </form>
         )}

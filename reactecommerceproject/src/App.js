@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart, Checkout, HomePage, Footer, QuoteForm, Gallery, Socials, Location} from './components';
+import { Products, Navbar, Cart, Checkout, HomePage, Footer, QuoteForm, Gallery, Socials, Location, Sent} from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductParser from './lib/ProductParser';
 import ImageParser from './lib/ImageParser';
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core";
 import CssBaseline from '@material-ui/core/CssBaseline';
+
 
  
 
@@ -129,7 +130,10 @@ const App = () => {
           <Route exact path="/Location">
             <Location />
           </Route>
-        </Switch>
+            </Switch>
+          <Route exact path="/Sent">
+            <Sent />
+          </Route>
         <Footer />
       </div>
       </Router>
